@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Modelo Calculadora</title>
+    <link rel="stylesheet" href="calculadora/css/style.css"/>
+  </head>
+  <body>
+    <main class="calculadora">
+        <!-- Display -->
+        <section class="display">
+            <div id="expressao"></div>
+            <div id="resultado">0</div>            
+        </section>
+
+        <!-- Teclado -->
+        <section class="teclado">
+            <!-- Linha 1 -->
+            <button class="botao funcao" data-acao="limpar">C</button>
+            <button class="botao funcao" data-acao="apagar">←</button>
+            <button class="botao funcao" data-acao="porcentagem">%</button>
+            <button class="botao operador" data-operador="/">÷</button>
+
+            <!-- Linha 2 -->
+            <button class="botao numerico" data-numero="7">7</button>
+            <button class="botao numerico" data-numero="8">8</button>
+            <button class="botao numerico" data-numero="9">9</button>
+            <button class="botao operador" data-operador="*">×</button>
+
+            <!-- Linha 3 -->
+            <button class="botao numerico" data-numero="4">4</button>
+            <button class="botao numerico" data-numero="5">5</button>
+            <button class="botao numerico" data-numero="6">6</button>
+            <button class="botao operador" data-operador="-">−</button>
+
+            <!-- Linha 4 -->
+            <button class="botao numerico" data-numero="1">1</button>
+            <button class="botao numerico" data-numero="2">2</button>
+            <button class="botao numerico" data-numero="3">3</button>
+            <button class="botao operador" data-operador="+">+</button>
+
+            <!-- Linha 5 -->
+            <button class="botao numerico zero" data-numero="0">0</button>
+            <button class="botao numerico" data-numero=".">.</button>
+            <button class="botao funcao" data-acao="sinal">±</button>
+            <button class="botao resultado" data-acao="igual">=</button>
+
+        </section>
+    </main>
+    <script src="calculadora/js/script.js"></script>
+  </body>
+</html>

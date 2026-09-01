@@ -1,0 +1,171 @@
+/* Resetar estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #eef2f5;
+    font-family:Arial, Helvetica, sans-serif;
+    transition: 
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Calculadora */
+.calculadora{
+    width: 306px;
+    padding: 25px;
+    border-radius: 25px;
+    background: #eef2f5;
+    box-shadow: 
+        15px 15px 30px #c8cdd1,
+        -15px -15px 30px #ffffff;
+}
+
+/* Display */
+.display{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 25px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #eef2f5;
+    box-shadow: 
+        inset 6px 6px 12px #c8cdd1,
+        inset -6px -6px 12px #ffffff;
+}
+
+/* Expressão anterior */
+#expressao{
+    width: 100%;
+    min-height: 25px;
+    text-align: right;
+    font-size: 15px;
+    color: #777;
+    overflow: hidden;
+}
+
+/* Expressão atual */
+#resultado{
+    width: 100%;
+    text-align: right;
+    font-size: 32px;
+    font-weight: bold;
+    color: #4d555c;
+    overflow: hidden;
+}
+
+/* Teclas */
+.teclado{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Botões */
+.botao{
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    background: #eef2f5;
+    color: #596168;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 
+        6px 6px 12px #c8cdd1,
+        -6px -6px 12px #ffffff;
+    transition: 
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+}
+
+/* Hover/Passar por cima */
+.botao:hover{
+    transform: translateY(-3px);
+}
+
+/* Clique */
+.botao:active{
+    transform: translateY(2px);
+    box-shadow: 
+        inset 6px 6px 12px #c8cdd1,
+        inset -6px -6px 12px #ffffff;
+}
+
+/* Botoes numericos */
+.numerico{
+    color: #596168;
+}
+
+/* Botões de operação */
+.operador{
+    font-size: 22px;
+}
+
+/* Botoes de Funções */
+.funcao{
+    font-size: 18px;
+}
+
+/* Botão AC */
+.botao[data-acao="limpar"]{
+    background: #be3ef0;
+    color: white;
+    box-shadow:
+            6px 6px 12px #c8cdd1,
+            -6px -6px 12px #ffffff;
+}
+
+/* Botão de Adição */
+.botao[data-operador="+"] {
+    background: #27ae3b;
+    color: white;
+    box-shadow:
+            6px 6px 12px #c8cdd1,
+            -6px -6px 12px #ffffff;
+    grid-row: span 1;
+}
+
+/* Botão de Resultado */
+.resultado {
+    background: #2196e3;
+    color: white;
+}
+
+/* Botão de Número Zero */
+.zero {
+    grid-column: span 1;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 450px) {
+
+    .calculadora {
+        width: 90%;
+
+        padding: 20px;
+    }
+
+    .botao {
+        height: 55px;
+
+        font-size: 18px;
+    }
+
+    #resultado {
+        font-size: 28px;
+    }
+}
