@@ -52,3 +52,43 @@ botaoLimpar.addEventListener("click", () => {
   limparDisplay();
 });
 
+// botao apagar ultimo dígito
+
+const botaoApagar = document.querySelector('[data-acao="apagar"]');
+
+// função para apagar o último dígito
+
+function apagarUltimoDigito() {
+    if (entradaAtual.length > 1) {
+        entradaAtual = entradaAtual.slice(0, -1); // remove o último caractere da string
+    } else {
+        entradaAtual = "0"; // se só tiver um dígito, volta para 0
+    }
+    atualizarDisplay();
+}
+
+// adicionar evento ao botão de apagar
+
+botaoApagar.addEventListener("click", () => {
+    apagarUltimoDigito();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
