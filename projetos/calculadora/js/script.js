@@ -1,12 +1,20 @@
 // elementos do HTML
 
-const LIMITE_DIGITOS = 12;
 const displayResultado = document.getElementById("resultado");
 const botoesNumeros = document.querySelectorAll(".numerico"); // nome da class dos botões de números
+const botoesOperadores = document.querySelectorAll(".operador"); // nome da class dos botões de operadores
+const botaoLimpar = document.querySelector('[data-acao="limpar"]');
+const botaoApagar = document.querySelector('[data-acao="apagar"]');
+
+// configurações iniciais do display
+
+const LIMITE_DIGITOS = 12;
 
 // status da calculadora
 
 let entradaAtual = "0";
+let primeiroNumero = null;
+let operador = null;
 
 // função para atualizar o display
 
@@ -36,20 +44,14 @@ function digitarNumero(numero) {
   atualizarDisplay();
 }
 
-// adicionar eventos aos botões de números
+// função para realizar operações matemáticas
 
-botoesNumeros.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const numero = botao.dataset.numero; // nome do atributo data-numero do botão
-    digitarNumero(numero);
-  });
-});
-
-atualizarDisplay();
-
-// botao limpar
-
-const botaoLimpar = document.querySelector('[data-acao="limpar"]');
+function seletorOperacao(operadorSelecionado) {
+  primeiroNumero = number(entradaAtual);
+  operador = operadorSelecionado;
+  entradaAtual = "0";
+  atualizarDisplay();
+}
 
 // função para limpar o display
 
@@ -57,16 +59,6 @@ function limparDisplay() {
   entradaAtual = "0";
   atualizarDisplay();
 }
-
-// adicionar evento ao botão de limpar
-
-botaoLimpar.addEventListener("click", () => {
-  limparDisplay();
-});
-
-// botao apagar ultimo dígito
-
-const botaoApagar = document.querySelector('[data-acao="apagar"]');
 
 // função para apagar o último dígito
 
@@ -79,8 +71,36 @@ function apagarUltimoDigito() {
   atualizarDisplay();
 }
 
+// adicionar eventos aos botões de números
+
+botoesNumeros.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const numero = botao.dataset.numero; // nome do atributo data-numero do botão
+    digitarNumero(numero);
+  });
+});
+
+// adicionar eventos aos botões de operadores
+
+botoesOperadores.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const operadorSelecionado = botao.dataset.operador; // nome do atributo data-operador do botão
+    seletorOperacao(operadorSelecionado);
+  });
+});
+
+// adicionar evento ao botão de limpar
+
+botaoLimpar.addEventListener("click", () => {
+  limparDisplay();
+});
+
 // adicionar evento ao botão de apagar
 
 botaoApagar.addEventListener("click", () => {
   apagarUltimoDigito();
 });
+
+
+
+atualizarDisplay();
