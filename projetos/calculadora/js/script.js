@@ -108,6 +108,18 @@ function apagarUltimoDigito() {
     atualizarDisplay();
 }
 
+// função para alterar o sinal do número atual
+
+function alterarSinal() {
+    if (entradaAtual === "0") {
+        return; // não altera o sinal se o número for zero
+    }
+
+    entradaAtual = entradaAtual.startsWith("-") ? entradaAtual.slice(1) : `-${entradaAtual}`;
+    
+    atualizarDisplay();
+}
+
 // função para calcular o resultado
 
 function calcularOperacao(numInicial,operSelecionado,numFinal) {
@@ -149,21 +161,30 @@ botoesOperadores.forEach((botao) => {
 
 // adicionar evento ao botão de limpar
 
-botaoLimpar.addEventListener("click", () => {
-    limparDisplay();
-});
+// botaoLimpar.addEventListener("click", () => {
+//     limparDisplay();
+// });
 
 // adicionar evento ao botão de apagar
 
-botaoApagar.addEventListener("click", () => {
-    apagarUltimoDigito();
-});
+// botaoApagar.addEventListener("click", () => {
+//     apagarUltimoDigito();
+// });
 
 // adicionar evento ao botão de calcular
 
 botaoCalcular.addEventListener("click", () => {
     calcularResultado();
 });
+
+
+// adicionar evento aos botões - forma simplificada
+
+botaoLimpar.addEventListener("click", limparDisplay);
+botaoApagar.addEventListener("click", apagarUltimoDigito);
+botaoPorcentagem.addEventListener("click", aplicarPorcentagem);
+botaoSinal.addEventListener("click", alternarSinal);
+botaoCalcular.addEventListener("click", calcularResultado);
 
 // inicializa o display
 

@@ -118,17 +118,17 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   atualizarDisplay();
 // }
 
-function alternarSinal() {
-  if (entradaAtual === "0") {
-    return;
-  }
+// function alternarSinal() {
+//   if (entradaAtual === "0") {
+//     return;
+//   }
 
-  entradaAtual = entradaAtual.startsWith("-")
-    ? entradaAtual.slice(1)
-    : `-${entradaAtual}`;
+//   entradaAtual = entradaAtual.startsWith("-")
+//     ? entradaAtual.slice(1)
+//     : `-${entradaAtual}`;
 
-  atualizarDisplay();
-}
+//   atualizarDisplay();
+// }
 
 function aplicarPorcentagem() {
   entradaAtual = (Number(entradaAtual) / 100).toString();
