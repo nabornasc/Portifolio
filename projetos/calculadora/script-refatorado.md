@@ -3,15 +3,15 @@
 Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originais não foram alterados.
 
 ```js
-const displayResultado = document.getElementById("resultado");
-const displayExpressao = document.getElementById("expressao");
-const botoesNumeros = document.querySelectorAll(".numerico");
-const botoesOperadores = document.querySelectorAll(".operador");
-const botaoLimpar = document.querySelector('[data-acao="limpar"]');
-const botaoApagar = document.querySelector('[data-acao="apagar"]');
+// const displayResultado = document.getElementById("resultado");
+// const displayExpressao = document.getElementById("expressao");
+// const botoesNumeros = document.querySelectorAll(".numerico");
+// const botoesOperadores = document.querySelectorAll(".operador");
+// const botaoLimpar = document.querySelector('[data-acao="limpar"]');
+// const botaoApagar = document.querySelector('[data-acao="apagar"]');
 const botaoPorcentagem = document.querySelector('[data-acao="porcentagem"]');
 const botaoSinal = document.querySelector('[data-acao="sinal"]');
-const botaoCalcular = document.querySelector('[data-acao="igual"]');
+// const botaoCalcular = document.querySelector('[data-acao="igual"]');
 
 const LIMITE_DIGITOS = 12;
 

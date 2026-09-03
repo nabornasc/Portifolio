@@ -7,6 +7,8 @@ const botaoLimpar = document.querySelector('[data-acao="limpar"]');
 const botaoApagar = document.querySelector('[data-acao="apagar"]');
 const botaoCalcular = document.querySelector('[data-acao="igual"]');
 const displayExpressao = document.getElementById("expressao");
+const botaoPorcentagem = document.querySelector('[data-acao="porcentagem"]');
+const botaoSinal = document.querySelector('[data-acao="sinal"]');
 
 // configurações iniciais do display
 
