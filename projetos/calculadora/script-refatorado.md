@@ -26,33 +26,33 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   displayResultado.textContent = entradaAtual;
 // }
 
-function iniciarNovaEntrada() {
-  if (calculoFinalizado) {
-    entradaAtual = "0";
-    expressaoAtual = "";
-    calculoFinalizado = false;
-  }
-}
+// function iniciarNovaEntrada() {
+//   if (calculoFinalizado) {
+//     entradaAtual = "0";
+//     expressaoAtual = "";
+//     calculoFinalizado = false;
+//   }
+// }
 
-function digitarNumero(numero) {
-  iniciarNovaEntrada();
+// function digitarNumero(numero) {
+//   iniciarNovaEntrada();
 
-  if (entradaAtual.length >= LIMITE_DIGITOS) {
-    return;
-  }
+//   if (entradaAtual.length >= LIMITE_DIGITOS) {
+//     return;
+//   }
 
-  if (numero === "." && entradaAtual.includes(".")) {
-    return;
-  }
+//   if (numero === "." && entradaAtual.includes(".")) {
+//     return;
+//   }
 
-  if (entradaAtual === "0") {
-    entradaAtual = numero === "." ? "0." : numero;
-  } else {
-    entradaAtual += numero;
-  }
+//   if (entradaAtual === "0") {
+//     entradaAtual = numero === "." ? "0." : numero;
+//   } else {
+//     entradaAtual += numero;
+//   }
 
-  atualizarDisplay();
-}
+//   atualizarDisplay();
+// }
 
 function calcularOperacao(numeroInicial, operadorSelecionado, numeroFinal) {
   switch (operadorSelecionado) {

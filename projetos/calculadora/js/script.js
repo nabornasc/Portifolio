@@ -42,19 +42,18 @@ function iniciarNovaEntrada() {
 // digitação de números
 
 function digitarNumero(numero) {
+    iniciarNovaEntrada();
+
     if (entradaAtual.length >= LIMITE_DIGITOS) {
         return; // não permite digitar mais dígitos se atingir o limite
     }
+
     if (numero === "." && entradaAtual.includes(".")) {
         return; // não permite digitar mais de um ponto decimal
     }
 
     if (entradaAtual === "0") {
-        if (numero === ".") {
-            entradaAtual = "0.";
-        } else {
-            entradaAtual = numero; // substitui o 0 inicial pelo número digitado
-        }
+        entradaAtual = numero === "." ? "0." : numero; // permite digitar ponto decimal após o 0 inicial
     } else {
         entradaAtual += numero;
     }
