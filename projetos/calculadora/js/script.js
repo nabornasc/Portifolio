@@ -5,6 +5,8 @@ const botoesNumeros = document.querySelectorAll(".numerico"); // nome da class d
 const botoesOperadores = document.querySelectorAll(".operador"); // nome da class dos botões de operadores
 const botaoLimpar = document.querySelector('[data-acao="limpar"]');
 const botaoApagar = document.querySelector('[data-acao="apagar"]');
+const botaoCalcular = document.querySelector('[data-acao="igual"]');
+const displayExpressao = document.getElementById("expressao");
 
 // configurações iniciais do display
 
@@ -15,10 +17,13 @@ const LIMITE_DIGITOS = 12;
 let entradaAtual = "0";
 let primeiroNumero = null;
 let operador = null;
+let calculoFinalizado = false;
+let expressaoAtual = "";
 
 // função para atualizar o display
 
 function atualizarDisplay() {
+    displayExpressao.textContent=entradaAtual;
     displayResultado.textContent = entradaAtual;
 }
 
@@ -49,8 +54,7 @@ function digitarNumero(numero) {
 function seletorOperacao(operadorSelecionado) {
     primeiroNumero = Number(entradaAtual);
     operador = operadorSelecionado;
-    console.log("Operador selecionado:", operador);
-    console.log("Primeiro número:", primeiroNumero);
+    displayExpressao =`${primeiroNumero} ${operador}`;
     entradaAtual = "0";
     atualizarDisplay();
 }
@@ -73,6 +77,38 @@ function apagarUltimoDigito() {
         entradaAtual = "0"; // se só tiver um dígito, volta para 0
     }
     atualizarDisplay();
+}
+
+// função para calcular o resultado
+
+function calcularResultado() {
+  const segundoNumero = Number(entradaAtual);
+  let resultado;
+  
+  switch (operador) {
+    case "+":
+      resultado = primeiroNumero + segundoNumero;
+      break;
+    case "-":
+      resultado = primeiroNumero - segundoNumero;
+      break;
+    case "*":
+      resultado = primeiroNumero * segundoNumero;
+      break;
+    case "/":
+      if (segundoNumero === 0) {
+        alert("Erro: Divisão por zero não é permitida.");
+        limparDisplay();
+        return;
+      }
+      resultado = primeiroNumero / segundoNumero;
+      break;
+    default:
+      return; // operador inválido
+  }
+
+  entradaAtual = resultado.toString();
+  atualizarDisplay();
 }
 
 // adicionar eventos aos botões de números
@@ -105,4 +141,14 @@ botaoApagar.addEventListener("click", () => {
     apagarUltimoDigito();
 });
 
+// adicionar evento ao botão de calcular
+
+botaoCalcular.addEventListener("click", () => {
+    calcularResultado();
+});
+
+// inicializa o display
+
 atualizarDisplay();
+
+

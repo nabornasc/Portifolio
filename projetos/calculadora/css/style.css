@@ -37,8 +37,8 @@ body{
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: stretch;
     overflow: hidden;
     border-radius: 15px;
     background: #eef2f5;
@@ -51,10 +51,12 @@ body{
 #expressao{
     width: 100%;
     min-height: 25px;
-    text-align: right;
+    text-align: left;
     font-size: 15px;
     color: #777;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Expressão atual */
@@ -65,6 +67,7 @@ body{
     font-weight: bold;
     color: #4d555c;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 /* Teclas */
