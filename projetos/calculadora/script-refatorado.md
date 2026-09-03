@@ -54,24 +54,24 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   atualizarDisplay();
 // }
 
-function calcularOperacao(numeroInicial, operadorSelecionado, numeroFinal) {
-  switch (operadorSelecionado) {
-    case "+":
-      return numeroInicial + numeroFinal;
-    case "-":
-      return numeroInicial - numeroFinal;
-    case "*":
-      return numeroInicial * numeroFinal;
-    case "/":
-      if (numeroFinal === 0) {
-        alert("Erro: Divisão por zero não é permitida.");
-        return null;
-      }
-      return numeroInicial / numeroFinal;
-    default:
-      return null;
-  }
-}
+// function calcularOperacao(numeroInicial, operadorSelecionado, numeroFinal) {
+//   switch (operadorSelecionado) {
+//     case "+":
+//       return numeroInicial + numeroFinal;
+//     case "-":
+//       return numeroInicial - numeroFinal;
+//     case "*":
+//       return numeroInicial * numeroFinal;
+//     case "/":
+//       if (numeroFinal === 0) {
+//         alert("Erro: Divisão por zero não é permitida.");
+//         return null;
+//       }
+//       return numeroInicial / numeroFinal;
+//     default:
+//       return null;
+//   }
+// }
 
 function selecionarOperacao(operadorSelecionado) {
   if (primeiroNumero !== null && operador !== null) {

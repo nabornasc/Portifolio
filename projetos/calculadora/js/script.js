@@ -92,34 +92,23 @@ function apagarUltimoDigito() {
 
 // função para calcular o resultado
 
-function calcularResultado() {
-    const segundoNumero = Number(entradaAtual);
-    let resultado;
-
-    switch (operador) {
+function calcularOperacao(numInicial,operSelecionado,numFinal) {
+    switch (operSelecionado) {
         case "+":
-            resultado = primeiroNumero + segundoNumero;
-            break;
+            return numInicial + numFinal;
         case "-":
-            resultado = primeiroNumero - segundoNumero;
-            break;
+            return numInicial - numFinal;
         case "*":
-            resultado = primeiroNumero * segundoNumero;
-            break;
+            return numInicial * numFinal;
         case "/":
-            if (segundoNumero === 0) {
+            if (numFinal === 0) {
                 alert("Erro: Divisão por zero não é permitida.");
-                limparDisplay();
-                return;
+                return null;
             }
-            resultado = primeiroNumero / segundoNumero;
-            break;
+            return numInicial / numFinal;
         default:
-            return; // operador inválido
+            return null; // operador inválido
     }
-
-    entradaAtual = resultado.toString();
-    atualizarDisplay();
 }
 
 // adicionar eventos aos botões de números
