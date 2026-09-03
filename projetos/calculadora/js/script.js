@@ -63,11 +63,25 @@ function digitarNumero(numero) {
 // função para realizar operações matemáticas
 
 function seletorOperacao(operadorSelecionado) {
+    if (primeiroNumero !== null && operador !== null) {
+        const resultadoParcial = calcularOperacao(
+            primeiroNumero,
+            operador,
+            Number(entradaAtual));
+
+        if (resultadoParcial === null) {
+            limparDisplay();
+            return;
+        }
+} else {
     primeiroNumero = Number(entradaAtual);
-    operador = operadorSelecionado;
-    displayExpressao = `${primeiroNumero} ${operador}`;
-    entradaAtual = "0";
-    atualizarDisplay();
+}
+
+operador = operadorSelecionado;
+expressaoAtual = `${primeiroNumero} ${operador}`;
+entradaAtual = "0";
+calculoFinalizado = false;
+atualizarDisplay();
 }
 
 // função para limpar o display

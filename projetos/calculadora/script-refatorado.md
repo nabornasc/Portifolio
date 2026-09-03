@@ -73,30 +73,30 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   }
 // }
 
-function selecionarOperacao(operadorSelecionado) {
-  if (primeiroNumero !== null && operador !== null) {
-    const resultadoParcial = calcularOperacao(
-      primeiroNumero,
-      operador,
-      Number(entradaAtual),
-    );
+// function selecionarOperacao(operadorSelecionado) {
+//   if (primeiroNumero !== null && operador !== null) {
+//     const resultadoParcial = calcularOperacao(
+//       primeiroNumero,
+//       operador,
+//       Number(entradaAtual),
+//     );
 
-    if (resultadoParcial === null) {
-      limparDisplay();
-      return;
-    }
+//     if (resultadoParcial === null) {
+//       limparDisplay();
+//       return;
+//     }
 
-    primeiroNumero = resultadoParcial;
-  } else {
-    primeiroNumero = Number(entradaAtual);
-  }
+//     primeiroNumero = resultadoParcial;
+//   } else {
+//     primeiroNumero = Number(entradaAtual);
+//   }
 
-  operador = operadorSelecionado;
-  expressaoAtual = `${primeiroNumero} ${operador}`;
-  entradaAtual = "0";
-  calculoFinalizado = false;
-  atualizarDisplay();
-}
+//   operador = operadorSelecionado;
+//   expressaoAtual = `${primeiroNumero} ${operador}`;
+//   entradaAtual = "0";
+//   calculoFinalizado = false;
+//   atualizarDisplay();
+// }
 
 function limparDisplay() {
   entradaAtual = "0";
