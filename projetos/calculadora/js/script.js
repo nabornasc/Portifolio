@@ -120,7 +120,15 @@ function alterarSinal() {
     atualizarDisplay();
 }
 
-// função para calcular o resultado
+// função para aplicar porcentagem ao número atual
+
+function aplicarPorcentagem() {
+    entradaAtual = (Number(entradaAtual) / 100).toString();
+    atualizarDisplay();
+}
+
+
+// função para calcular o resultado da operação
 
 function calcularOperacao(numInicial,operSelecionado,numFinal) {
     switch (operSelecionado) {
@@ -139,6 +147,27 @@ function calcularOperacao(numInicial,operSelecionado,numFinal) {
         default:
             return null; // operador inválido
     }
+}
+
+// função para calcular o resultado final
+
+function calcularResultado() {
+    if (primeiroNumero === null || operador === null) {
+        return; // não há operação a ser realizada
+    }
+
+    const segundoNumero = Number(entradaAtual);
+    const resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
+
+    if (resultado !== null) {
+        entradaAtual = resultado.toString();
+        primeiroNumero = null;
+        operador = null;
+        calculoFinalizado = true;
+        expressaoAtual = "";
+    }
+
+    atualizarDisplay();
 }
 
 // adicionar eventos aos botões de números

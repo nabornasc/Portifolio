@@ -130,31 +130,31 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   atualizarDisplay();
 // }
 
-function aplicarPorcentagem() {
-  entradaAtual = (Number(entradaAtual) / 100).toString();
-  atualizarDisplay();
-}
+// function aplicarPorcentagem() {
+//   entradaAtual = (Number(entradaAtual) / 100).toString();
+//   atualizarDisplay();
+// }
 
-function calcularResultado() {
-  if (primeiroNumero === null || operador === null) {
-    return;
-  }
+// function calcularResultado() {
+//   if (primeiroNumero === null || operador === null) {
+//     return;
+//   }
 
-  const segundoNumero = Number(entradaAtual);
-  const resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
+//   const segundoNumero = Number(entradaAtual);
+//   const resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
 
-  if (resultado === null) {
-    limparDisplay();
-    return;
-  }
+//   if (resultado === null) {
+//     limparDisplay();
+//     return;
+//   }
 
-  expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
-  entradaAtual = resultado.toString();
-  primeiroNumero = null;
-  operador = null;
-  calculoFinalizado = true;
-  atualizarDisplay();
-}
+//   expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
+//   entradaAtual = resultado.toString();
+//   primeiroNumero = null;
+//   operador = null;
+//   calculoFinalizado = true;
+//   atualizarDisplay();
+// }
 
 botoesNumeros.forEach((botao) => {
   botao.addEventListener("click", () => {
@@ -168,11 +168,11 @@ botoesOperadores.forEach((botao) => {
   });
 });
 
-botaoLimpar.addEventListener("click", limparDisplay);
-botaoApagar.addEventListener("click", apagarUltimoDigito);
-botaoPorcentagem.addEventListener("click", aplicarPorcentagem);
-botaoSinal.addEventListener("click", alternarSinal);
-botaoCalcular.addEventListener("click", calcularResultado);
+// botaoLimpar.addEventListener("click", limparDisplay);
+// botaoApagar.addEventListener("click", apagarUltimoDigito);
+// botaoPorcentagem.addEventListener("click", aplicarPorcentagem);
+// botaoSinal.addEventListener("click", alternarSinal);
+// botaoCalcular.addEventListener("click", calcularResultado);
 
 atualizarDisplay();
 ```
