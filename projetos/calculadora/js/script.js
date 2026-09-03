@@ -90,6 +90,8 @@ function limparDisplay() {
     entradaAtual = "0";
     primeiroNumero = null;
     operador = null;
+    calculoFinalizado = false;
+    expressaoAtual = "";
     atualizarDisplay();
 }
 

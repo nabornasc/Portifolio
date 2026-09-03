@@ -98,14 +98,14 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   atualizarDisplay();
 // }
 
-function limparDisplay() {
-  entradaAtual = "0";
-  primeiroNumero = null;
-  operador = null;
-  calculoFinalizado = false;
-  expressaoAtual = "";
-  atualizarDisplay();
-}
+// function limparDisplay() {
+//   entradaAtual = "0";
+//   primeiroNumero = null;
+//   operador = null;
+//   calculoFinalizado = false;
+//   expressaoAtual = "";
+//   atualizarDisplay();
+// }
 
 function apagarUltimoDigito() {
   if (calculoFinalizado) {
