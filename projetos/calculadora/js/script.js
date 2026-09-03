@@ -98,11 +98,13 @@ function limparDisplay() {
 // função para apagar o último dígito
 
 function apagarUltimoDigito() {
-    if (entradaAtual.length > 1) {
-        entradaAtual = entradaAtual.slice(0, -1); // remove o último caractere da string
-    } else {
-        entradaAtual = "0"; // se só tiver um dígito, volta para 0
+    if (calculoFinalizado) {
+        limparDisplay();
+        return;
     }
+
+    entradaAtual = entradaAtual.length > 1 ? entradaAtual.slice(0, -1) : "0";
+    
     atualizarDisplay();
 }
 

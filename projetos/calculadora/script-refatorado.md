@@ -107,16 +107,16 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   atualizarDisplay();
 // }
 
-function apagarUltimoDigito() {
-  if (calculoFinalizado) {
-    limparDisplay();
-    return;
-  }
+// function apagarUltimoDigito() {
+//   if (calculoFinalizado) {
+//     limparDisplay();
+//     return;
+//   }
 
-  entradaAtual = entradaAtual.length > 1 ? entradaAtual.slice(0, -1) : "0";
+//   entradaAtual = entradaAtual.length > 1 ? entradaAtual.slice(0, -1) : "0";
 
-  atualizarDisplay();
-}
+//   atualizarDisplay();
+// }
 
 function alternarSinal() {
   if (entradaAtual === "0") {
