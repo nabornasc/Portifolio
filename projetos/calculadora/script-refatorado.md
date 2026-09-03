@@ -156,17 +156,17 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 //   atualizarDisplay();
 // }
 
-botoesNumeros.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    digitarNumero(botao.dataset.numero);
-  });
-});
+// botoesNumeros.forEach((botao) => {
+//   botao.addEventListener("click", () => {
+//     digitarNumero(botao.dataset.numero);
+//   });
+// });
 
-botoesOperadores.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    selecionarOperacao(botao.dataset.operador);
-  });
-});
+// botoesOperadores.forEach((botao) => {
+//   botao.addEventListener("click", () => {
+//     selecionarOperacao(botao.dataset.operador);
+//   });
+// });
 
 // botaoLimpar.addEventListener("click", limparDisplay);
 // botaoApagar.addEventListener("click", apagarUltimoDigito);
@@ -174,7 +174,7 @@ botoesOperadores.forEach((botao) => {
 // botaoSinal.addEventListener("click", alternarSinal);
 // botaoCalcular.addEventListener("click", calcularResultado);
 
-atualizarDisplay();
+// atualizarDisplay();
 ```
 
 ## Testes executados

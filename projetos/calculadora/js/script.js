@@ -110,7 +110,7 @@ function apagarUltimoDigito() {
 
 // função para alterar o sinal do número atual
 
-function alterarSinal() {
+function alternarSinal() {
     if (entradaAtual === "0") {
         return; // não altera o sinal se o número for zero
     }
@@ -174,8 +174,7 @@ function calcularResultado() {
 
 botoesNumeros.forEach((botao) => {
     botao.addEventListener("click", () => {
-        const numero = botao.dataset.numero; // nome do atributo data-numero do botão
-        digitarNumero(numero);
+        digitarNumero(botao.dataset.numero); // nome do atributo data-numero do botão
     });
 });
 
@@ -183,8 +182,7 @@ botoesNumeros.forEach((botao) => {
 
 botoesOperadores.forEach((botao) => {
     botao.addEventListener("click", () => {
-        const operadorSelecionado = botao.dataset.operador; // nome do atributo data-operador do botão
-        seletorOperacao(operadorSelecionado);
+        seletorOperacao(botao.dataset.operador); // nome do atributo data-operador do botão
     });
 });
 
