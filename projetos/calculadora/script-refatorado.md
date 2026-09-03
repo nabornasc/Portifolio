@@ -9,22 +9,22 @@ Este arquivo contém uma versão refatorada do `script.js`. Os arquivos originai
 // const botoesOperadores = document.querySelectorAll(".operador");
 // const botaoLimpar = document.querySelector('[data-acao="limpar"]');
 // const botaoApagar = document.querySelector('[data-acao="apagar"]');
-const botaoPorcentagem = document.querySelector('[data-acao="porcentagem"]');
-const botaoSinal = document.querySelector('[data-acao="sinal"]');
+// const botaoPorcentagem = document.querySelector('[data-acao="porcentagem"]');
+// const botaoSinal = document.querySelector('[data-acao="sinal"]');
 // const botaoCalcular = document.querySelector('[data-acao="igual"]');
 
-const LIMITE_DIGITOS = 12;
+// const LIMITE_DIGITOS = 12;
 
-let entradaAtual = "0";
-let primeiroNumero = null;
-let operador = null;
-let calculoFinalizado = false;
-let expressaoAtual = "";
+// let entradaAtual = "0";
+// let primeiroNumero = null;
+// let operador = null;
+// let calculoFinalizado = false;
+// let expressaoAtual = "";
 
-function atualizarDisplay() {
-  displayExpressao.textContent = expressaoAtual;
-  displayResultado.textContent = entradaAtual;
-}
+// function atualizarDisplay() {
+//   displayExpressao.textContent = expressaoAtual;
+//   displayResultado.textContent = entradaAtual;
+// }
 
 function iniciarNovaEntrada() {
   if (calculoFinalizado) {

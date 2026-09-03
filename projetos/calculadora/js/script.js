@@ -25,8 +25,18 @@ let expressaoAtual = "";
 // função para atualizar o display
 
 function atualizarDisplay() {
-    displayExpressao.textContent=entradaAtual;
+    displayExpressao.textContent = entradaAtual;
     displayResultado.textContent = entradaAtual;
+}
+
+// iniviar nova entrada após o cálculo
+
+function iniciarNovaEntrada() {
+    if (calculoFinalizado) {
+        entradaAtual = "0";
+        expressaoAtual = "";
+        calculoFinalizado = false;
+    }
 }
 
 // digitação de números
@@ -56,7 +66,7 @@ function digitarNumero(numero) {
 function seletorOperacao(operadorSelecionado) {
     primeiroNumero = Number(entradaAtual);
     operador = operadorSelecionado;
-    displayExpressao =`${primeiroNumero} ${operador}`;
+    displayExpressao = `${primeiroNumero} ${operador}`;
     entradaAtual = "0";
     atualizarDisplay();
 }
@@ -84,33 +94,33 @@ function apagarUltimoDigito() {
 // função para calcular o resultado
 
 function calcularResultado() {
-  const segundoNumero = Number(entradaAtual);
-  let resultado;
-  
-  switch (operador) {
-    case "+":
-      resultado = primeiroNumero + segundoNumero;
-      break;
-    case "-":
-      resultado = primeiroNumero - segundoNumero;
-      break;
-    case "*":
-      resultado = primeiroNumero * segundoNumero;
-      break;
-    case "/":
-      if (segundoNumero === 0) {
-        alert("Erro: Divisão por zero não é permitida.");
-        limparDisplay();
-        return;
-      }
-      resultado = primeiroNumero / segundoNumero;
-      break;
-    default:
-      return; // operador inválido
-  }
+    const segundoNumero = Number(entradaAtual);
+    let resultado;
 
-  entradaAtual = resultado.toString();
-  atualizarDisplay();
+    switch (operador) {
+        case "+":
+            resultado = primeiroNumero + segundoNumero;
+            break;
+        case "-":
+            resultado = primeiroNumero - segundoNumero;
+            break;
+        case "*":
+            resultado = primeiroNumero * segundoNumero;
+            break;
+        case "/":
+            if (segundoNumero === 0) {
+                alert("Erro: Divisão por zero não é permitida.");
+                limparDisplay();
+                return;
+            }
+            resultado = primeiroNumero / segundoNumero;
+            break;
+        default:
+            return; // operador inválido
+    }
+
+    entradaAtual = resultado.toString();
+    atualizarDisplay();
 }
 
 // adicionar eventos aos botões de números
@@ -152,5 +162,3 @@ botaoCalcular.addEventListener("click", () => {
 // inicializa o display
 
 atualizarDisplay();
-
-
