@@ -1,5 +1,5 @@
 // elementos do HTML
-
+const calculadora = document.querySelector(".calculadora");
 const displayResultado = document.getElementById("resultado");
 const botoesNumeros = document.querySelectorAll(".numerico"); // nome da class dos botões de números
 const botoesOperadores = document.querySelectorAll(".operador"); // nome da class dos botões de operadores
@@ -67,7 +67,8 @@ function seletorOperacao(operadorSelecionado) {
         const resultadoParcial = calcularOperacao(
             primeiroNumero,
             operador,
-            Number(entradaAtual));
+            Number(entradaAtual),
+        );
 
         if (resultadoParcial === null) {
             limparDisplay();
@@ -105,7 +106,7 @@ function apagarUltimoDigito() {
     }
 
     entradaAtual = entradaAtual.length > 1 ? entradaAtual.slice(0, -1) : "0";
-    
+
     atualizarDisplay();
 }
 
@@ -116,15 +117,31 @@ function alternarSinal() {
         return; // não altera o sinal se o número for zero
     }
 
-    entradaAtual = entradaAtual.startsWith("-") ? entradaAtual.slice(1) : `-${entradaAtual}`;
-    
+    entradaAtual = entradaAtual.startsWith("-")
+        ? entradaAtual.slice(1)
+        : `-${entradaAtual}`;
+
     atualizarDisplay();
 }
 
 // função para aplicar porcentagem ao número atual
 
 function aplicarPorcentagem() {
-    entradaAtual = (Number(entradaAtual) / 100).toString();
+
+    const valorAtual = Number(entradaAtual);
+
+    if (primeiroNumero !== null && operador !== null) {
+        const resultado=calcularPorcentagem(
+            valorAtual,
+            primeiroNumero);
+
+        entradaAtual = resultado.toString();
+    } else {
+        const resultado=calcularPorcentagem(valorAtual);
+
+        entradaAtual = resultado.toString();
+    }
+    
     atualizarDisplay();
 }
 
@@ -136,9 +153,7 @@ function calcularResultado() {
     }
 
     const segundoNumero = Number(entradaAtual);
-    const resultado = calcularOperacao(primeiroNumero,
-        operador,
-        segundoNumero);
+    const resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
 
     if (resultado === null) {
         alert("Erro: Operação inválida.");
@@ -188,7 +203,6 @@ botoesOperadores.forEach((botao) => {
 // botaoCalcular.addEventListener("click", () => {
 //     calcularResultado();
 // });
-
 
 // adicionar evento aos botões - forma simplificada
 
