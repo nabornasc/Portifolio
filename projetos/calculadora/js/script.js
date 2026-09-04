@@ -21,6 +21,7 @@ let primeiroNumero = null;
 let operador = null;
 let calculoFinalizado = false;
 let expressaoAtual = "";
+let porcentagemAtual = null;
 
 // função para atualizar o display
 
@@ -92,6 +93,7 @@ function limparDisplay() {
     entradaAtual = "0";
     primeiroNumero = null;
     operador = null;
+    porcentagemAtual = null;
     calculoFinalizado = false;
     expressaoAtual = "";
     atualizarDisplay();
@@ -135,11 +137,19 @@ function aplicarPorcentagem() {
             valorAtual,
             primeiroNumero);
 
+
+        porcentagemAtual = valorAtual;
+        
         entradaAtual = resultado.toString();
+        
+        expressaoAtual = `${primeiroNumero} ${operador} ${valorAtual}%`;
+
     } else {
         const resultado=calcularPorcentagem(valorAtual);
 
         entradaAtual = resultado.toString();
+
+        porcentagemAtual = null;
     }
     
     atualizarDisplay();
@@ -148,12 +158,17 @@ function aplicarPorcentagem() {
 // função para calcular o resultado final
 
 function calcularResultado() {
+
     if (primeiroNumero === null || operador === null) {
         return; // não há operação a ser realizada
     }
 
     const segundoNumero = Number(entradaAtual);
-    const resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
+
+    const resultado = calcularOperacao(
+        primeiroNumero,
+        operador,
+        segundoNumero);
 
     if (resultado === null) {
         alert("Erro: Operação inválida.");
@@ -161,10 +176,17 @@ function calcularResultado() {
         return;
     }
 
-    expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
+    if (porcentagemAtual !== null) {
+        expressaoAtual = `${primeiroNumero} ${operador} ${porcentagemAtual}% =`;
+        porcentagemAtual = null;
+    } else {
+        expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
+    }
+
     entradaAtual = resultado.toString();
     primeiroNumero = null;
     operador = null;
+    porcentagemAtual = null;
     calculoFinalizado = true;
 
     atualizarDisplay();
