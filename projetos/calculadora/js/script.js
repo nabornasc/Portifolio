@@ -25,7 +25,7 @@ let expressaoAtual = "";
 // função para atualizar o display
 
 function atualizarDisplay() {
-    displayExpressao.textContent = entradaAtual;
+    displayExpressao.textContent = expressaoAtual;
     displayResultado.textContent = entradaAtual;
 }
 
@@ -73,15 +73,16 @@ function seletorOperacao(operadorSelecionado) {
             limparDisplay();
             return;
         }
-} else {
-    primeiroNumero = Number(entradaAtual);
-}
+        primeiroNumero = resultadoParcial;
+    } else {
+        primeiroNumero = Number(entradaAtual);
+    }
 
-operador = operadorSelecionado;
-expressaoAtual = `${primeiroNumero} ${operador}`;
-entradaAtual = "0";
-calculoFinalizado = false;
-atualizarDisplay();
+    operador = operadorSelecionado;
+    expressaoAtual = `${primeiroNumero} ${operador}`;
+    entradaAtual = "0";
+    calculoFinalizado = false;
+    atualizarDisplay();
 }
 
 // função para limpar o display
@@ -127,28 +128,6 @@ function aplicarPorcentagem() {
     atualizarDisplay();
 }
 
-
-// função para calcular o resultado da operação
-
-function calcularOperacao(numInicial,operSelecionado,numFinal) {
-    switch (operSelecionado) {
-        case "+":
-            return numInicial + numFinal;
-        case "-":
-            return numInicial - numFinal;
-        case "*":
-            return numInicial * numFinal;
-        case "/":
-            if (numFinal === 0) {
-                alert("Erro: Divisão por zero não é permitida.");
-                return null;
-            }
-            return numInicial / numFinal;
-        default:
-            return null; // operador inválido
-    }
-}
-
 // função para calcular o resultado final
 
 function calcularResultado() {
@@ -157,15 +136,21 @@ function calcularResultado() {
     }
 
     const segundoNumero = Number(entradaAtual);
-    const resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
+    const resultado = calcularOperacao(primeiroNumero,
+        operador,
+        segundoNumero);
 
-    if (resultado !== null) {
-        entradaAtual = resultado.toString();
-        primeiroNumero = null;
-        operador = null;
-        calculoFinalizado = true;
-        expressaoAtual = "";
+    if (resultado === null) {
+        alert("Erro: Operação inválida.");
+        limparDisplay();
+        return;
     }
+
+    expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
+    entradaAtual = resultado.toString();
+    primeiroNumero = null;
+    operador = null;
+    calculoFinalizado = true;
 
     atualizarDisplay();
 }
@@ -200,9 +185,9 @@ botoesOperadores.forEach((botao) => {
 
 // adicionar evento ao botão de calcular
 
-botaoCalcular.addEventListener("click", () => {
-    calcularResultado();
-});
+// botaoCalcular.addEventListener("click", () => {
+//     calcularResultado();
+// });
 
 
 // adicionar evento aos botões - forma simplificada
