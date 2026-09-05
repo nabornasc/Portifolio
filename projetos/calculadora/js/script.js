@@ -53,7 +53,7 @@ function digitarNumero(numero) {
         calculoFinalizado = false;
     }
 
-    if(entradaAtual === "0" && numero === "0") {
+    if(entradaAtual === "0" && numero !== ".") {
         entradaAtual = numero; // não permite digitar mais de um zero inicial
     } else {        
         if (entradaAtual.length >= LIMITE_DIGITOS) {
@@ -96,6 +96,7 @@ function seletorOperacao(operadorSelecionado) {
     operador = operadorSelecionado;
     expressaoAtual = `${primeiroNumero} ${operador}`;
     entradaAtual = "0";
+    porcentagemAtual = null;
     calculoFinalizado = false;
     atualizarDisplay();
 }
@@ -135,7 +136,7 @@ function alternarSinal() {
     entradaAtual = entradaAtual.startsWith("-")
         ? entradaAtual.slice(1)
         : `-${entradaAtual}`;
-
+    porcentagemAtual = null;
     atualizarDisplay();
 }
 
