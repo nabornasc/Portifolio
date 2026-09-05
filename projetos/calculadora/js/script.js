@@ -36,6 +36,7 @@ function iniciarNovaEntrada() {
     if (calculoFinalizado) {
         entradaAtual = "0";
         expressaoAtual = "";
+        porcentagemAtual = null;
         calculoFinalizado = false;
     }
 }
@@ -137,7 +138,6 @@ function aplicarPorcentagem() {
             valorAtual,
             primeiroNumero);
 
-
         porcentagemAtual = valorAtual;
         
         entradaAtual = resultado.toString();
@@ -178,7 +178,6 @@ function calcularResultado() {
 
     if (porcentagemAtual !== null) {
         expressaoAtual = `${primeiroNumero} ${operador} ${porcentagemAtual}% =`;
-        porcentagemAtual = null;
     } else {
         expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
     }
