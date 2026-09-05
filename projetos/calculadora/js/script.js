@@ -44,22 +44,34 @@ function iniciarNovaEntrada() {
 // digitação de números
 
 function digitarNumero(numero) {
-    iniciarNovaEntrada();
-
-    if (entradaAtual.length >= LIMITE_DIGITOS) {
-        return; // não permite digitar mais dígitos se atingir o limite
+    if (calculoFinalizado) {
+        entradaAtual = "0";
+        primeiroNumero = null;
+        operador = null;
+        expressaoAtual = "";
+        porcentagemAtual = null;
+        calculoFinalizado = false;
     }
 
-    if (numero === "." && entradaAtual.includes(".")) {
-        return; // não permite digitar mais de um ponto decimal
-    }
+    if(entradaAtual === "0" && numero === "0") {
+        entradaAtual = numero; // não permite digitar mais de um zero inicial
+    } else {        
+        if (entradaAtual.length >= LIMITE_DIGITOS) {
+            return; // não permite digitar mais dígitos se atingir o limite
+        }
 
-    if (entradaAtual === "0") {
-        entradaAtual = numero === "." ? "0." : numero; // permite digitar ponto decimal após o 0 inicial
-    } else {
-        entradaAtual += numero;
+        if (numero === "." && entradaAtual.includes(".")) {
+            return; // não permite digitar mais de um ponto decimal
+        }
+
+        if (numero === "." && entradaAtual === "0") {
+            entradaAtual = "0."; // permite digitar "0." como primeiro dígito
+        } else {
+            entradaAtual += numero;
+        }
     }
     atualizarDisplay();
+
 }
 
 // função para realizar operações matemáticas
