@@ -164,22 +164,49 @@ function calcularResultado() {
     }
 
     const segundoNumero = Number(entradaAtual);
+    let resultado;
+    
+    if (porcentagemAtual !== null) {
+        const percentual = porcentagemAtual/100;
 
-    const resultado = calcularOperacao(
-        primeiroNumero,
-        operador,
-        segundoNumero);
+        switch (operador) {
+            case "+":
+                resultado = primeiroNumero + (primeiroNumero * percentual);
+                break;
+            case "-":
+                resultado = primeiroNumero - (primeiroNumero * percentual);
+                break;
+            case "*":
+                resultado = primeiroNumero * percentual;
+                break;
+            case "/":
+                if (percentual === 0) {
+                    resultado = null;
+                } else {
+                    resultado = primeiroNumero / percentual;
+                }
+                break;
+            default:
+                resultado = null;
+            
+        }
+    } else {
+        resultado = calcularOperacao(
+            primeiroNumero,
+            operador,
+            segundoNumero);
+    }
 
     if (resultado === null) {
-        alert("Erro: Operação inválida.");
+        alert("Erro: Operação inválida (divisão por zero ou operador inválido).");
         limparDisplay();
         return;
     }
 
     if (porcentagemAtual !== null) {
-        expressaoAtual = `${primeiroNumero} ${operador} ${porcentagemAtual}% =`;
+        expressaoAtual = `${primeiroNumero} ${operador} ${porcentagemAtual}% = ${resultado}`;
     } else {
-        expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} =`;
+        expressaoAtual = `${primeiroNumero} ${operador} ${segundoNumero} = ${resultado}`;
     }
 
     entradaAtual = resultado.toString();
