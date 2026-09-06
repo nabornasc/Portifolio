@@ -123,3 +123,28 @@ section.content-intro{
     text-transform: uppercase;
 }
 
+.botao-calculadora{
+    position: relative;
+    isolation: isolate;
+    display:block;
+    min-height: 13rem;
+    overflow: hidden;
+    border: 1px solid rgba(113,245,255,0.75);
+    border-radius: 1.25rem;
+    color: #f8fdff;
+    text-align: left;
+    text-decoration: none;
+    background:
+        linear-gradient(115deg,
+            rgba(4,12,34,0.96),
+            rgba(4,32,62,0.68)),
+            url("../img/calc-preview.png") center/cover no-repeat;
+    box-shadow:
+        0 0 0 1px rgba(130,245,255,0.14) inset,
+        0 0 1.5rem rgba(24,221,255,0.32),
+        0 1rem 2.5rem rgba(8,20,45,0.28);
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease;
+        border-color: 280ms ease;
+}
