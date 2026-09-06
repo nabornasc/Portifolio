@@ -104,3 +104,22 @@ section.content-intro{
   margin-top: 1rem;
 }
 
+/* ====================================================== */
+/* Projeto em destaque - Botão da calculadora */
+
+.projeto-destaque{
+    width: min(100% - 2rem, 42rem);
+    margin: 2.5rem auto 3rem;
+    text-align: center;
+}
+
+.projeto-destaque__titulo{
+    margin-bottom: 1rem;
+    color: inherit;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+}
+
