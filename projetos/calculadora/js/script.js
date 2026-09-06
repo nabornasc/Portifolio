@@ -81,7 +81,7 @@ function seletorOperacao(operadorSelecionado) {
         const resultadoParcial = calcularOperacao(
             primeiroNumero,
             operador,
-            Number(entradaAtual),
+            Number(entradaAtual)
         );
 
         if (resultadoParcial === null) {
