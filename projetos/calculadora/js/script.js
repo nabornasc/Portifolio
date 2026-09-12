@@ -74,6 +74,13 @@ function digitarNumero(numero) {
 
 }
 
+// iniciar o controle de teclas numéricas isoladas
+
+const controleTeclasNumericas = criarControleTeclasNumericas({
+    elementoRaiz: calculadora,
+    aoDigitar: digitarNumero,
+})
+
 // função para realizar operações matemáticas
 
 function seletorOperacao(operadorSelecionado) {
@@ -231,21 +238,31 @@ function calcularResultado() {
     atualizarDisplay();
 }
 
-// adicionar eventos aos botões de números
+// iniciar o controle de teclas de operações e funções isoladas
 
-botoesNumeros.forEach((botao) => {
-    botao.addEventListener("click", () => {
-        digitarNumero(botao.dataset.numero); // nome do atributo data-numero do botão
-    });
+const controleTeclasOperacoesFuncoes = criarControleOperacoesFuncoes({
+    elementoRaiz: calculadora,
+    aoSelecionarOperador: seletorOperacao,
+    aoCalcular: calcularResultado,
+    aoApagar: apagarUltimoDigito,
+    aoLimpar: limparDisplay,
 });
 
-// adicionar eventos aos botões de operadores
+// adicionar eventos aos botões de números - Desativado, pois vai ser gerencia pelo script teclas-numericas-isoladas.js
 
-botoesOperadores.forEach((botao) => {
-    botao.addEventListener("click", () => {
-        seletorOperacao(botao.dataset.operador); // nome do atributo data-operador do botão
-    });
-});
+// botoesNumeros.forEach((botao) => {
+//     botao.addEventListener("click", () => {
+//         digitarNumero(botao.dataset.numero); // nome do atributo data-numero do botão
+//     });
+// });
+
+// adicionar eventos aos botões de operadores - Desativado, pois vai ser gerencia pelo script teclas-operacoes-funcoes-isoladas.js
+
+// botoesOperadores.forEach((botao) => {
+//     botao.addEventListener("click", () => {
+//         seletorOperacao(botao.dataset.operador); // nome do atributo data-operador do botão
+//     });
+// });
 
 // adicionar evento ao botão de limpar
 
@@ -267,11 +284,11 @@ botoesOperadores.forEach((botao) => {
 
 // adicionar evento aos botões - forma simplificada
 
-botaoLimpar.addEventListener("click", limparDisplay);
-botaoApagar.addEventListener("click", apagarUltimoDigito);
+// botaoLimpar.addEventListener("click", limparDisplay); - Desativado, js vai gerenciar teclas-operacoes-funcoes-isoladas.js
+// botaoApagar.addEventListener("click", apagarUltimoDigito); - Desativado, js vai gerenciar teclas-operacoes-funcoes-isoladas.js
 botaoPorcentagem.addEventListener("click", aplicarPorcentagem);
 botaoSinal.addEventListener("click", alternarSinal);
-botaoCalcular.addEventListener("click", calcularResultado);
+// botaoCalcular.addEventListener("click", calcularResultado); - Desativado, js vai gerenciar teclas-operacoes-funcoes-isoladas.js
 
 // inicializa o display
 
