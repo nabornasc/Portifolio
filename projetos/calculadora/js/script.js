@@ -1,3 +1,8 @@
+/* global calcularOperacao, calcularPorcentagem */
+
+var calcularOperacao;
+var calcularPorcentagem;
+
 // elementos do HTML
 const calculadora = document.querySelector(".calculadora");
 const displayResultado = document.getElementById("resultado");
@@ -30,7 +35,7 @@ function atualizarDisplay() {
     displayResultado.textContent = entradaAtual;
 }
 
-// iniviar nova entrada após o cálculo
+// iniciar nova entrada após o cálculo
 
 function iniciarNovaEntrada() {
     if (calculoFinalizado) {
@@ -53,9 +58,9 @@ function digitarNumero(numero) {
         calculoFinalizado = false;
     }
 
-    if(entradaAtual === "0" && numero !== ".") {
+    if (entradaAtual === "0" && numero !== ".") {
         entradaAtual = numero; // não permite digitar mais de um zero inicial
-    } else {        
+    } else {
         if (entradaAtual.length >= LIMITE_DIGITOS) {
             return; // não permite digitar mais dígitos se atingir o limite
         }
@@ -71,7 +76,6 @@ function digitarNumero(numero) {
         }
     }
     atualizarDisplay();
-
 }
 
 // iniciar o controle de teclas numéricas isoladas
@@ -88,7 +92,7 @@ function seletorOperacao(operadorSelecionado) {
         const resultadoParcial = calcularOperacao(
             primeiroNumero,
             operador,
-            Number(entradaAtual)
+            Number(entradaAtual),
         );
 
         if (resultadoParcial === null) {
@@ -150,51 +154,46 @@ function alternarSinal() {
 // função para aplicar porcentagem ao número atual
 
 function aplicarPorcentagem() {
-
     const valorAtual = Number(entradaAtual);
 
     if (primeiroNumero !== null && operador !== null) {
-        const resultado=calcularPorcentagem(
-            valorAtual,
-            primeiroNumero);
+        const resultado = calcularPorcentagem(valorAtual, primeiroNumero);
 
         porcentagemAtual = valorAtual;
-        
-        entradaAtual = resultado.toString();
-        
-        expressaoAtual = `${primeiroNumero} ${operador} ${valorAtual}%`;
 
+        entradaAtual = resultado.toString();
+
+        expressaoAtual = `${primeiroNumero} ${operador} ${valorAtual}%`;
     } else {
-        const resultado=calcularPorcentagem(valorAtual);
+        const resultado = calcularPorcentagem(valorAtual);
 
         entradaAtual = resultado.toString();
 
         porcentagemAtual = null;
     }
-    
+
     atualizarDisplay();
 }
 
 // função para calcular o resultado final
 
 function calcularResultado() {
-
     if (primeiroNumero === null || operador === null) {
         return; // não há operação a ser realizada
     }
 
     const segundoNumero = Number(entradaAtual);
     let resultado;
-    
+
     if (porcentagemAtual !== null) {
-        const percentual = porcentagemAtual/100;
+        const percentual = porcentagemAtual / 100;
 
         switch (operador) {
             case "+":
-                resultado = primeiroNumero + (primeiroNumero * percentual);
+                resultado = primeiroNumero + primeiroNumero * percentual;
                 break;
             case "-":
-                resultado = primeiroNumero - (primeiroNumero * percentual);
+                resultado = primeiroNumero - primeiroNumero * percentual;
                 break;
             case "*":
                 resultado = primeiroNumero * percentual;
@@ -208,17 +207,15 @@ function calcularResultado() {
                 break;
             default:
                 resultado = null;
-            
         }
     } else {
-        resultado = calcularOperacao(
-            primeiroNumero,
-            operador,
-            segundoNumero);
+        resultado = calcularOperacao(primeiroNumero, operador, segundoNumero);
     }
 
     if (resultado === null) {
-        alert("Erro: Operação inválida (divisão por zero ou operador inválido).");
+        alert(
+            "Erro: Operação inválida (divisão por zero ou operador inválido).",
+        );
         limparDisplay();
         return;
     }
