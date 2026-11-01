@@ -105,7 +105,7 @@ section.content-intro{
 }
 
 /* ====================================================== */
-/* Projeto em destaque - Botão da calculadora */
+/* Projetos - cartões de acesso (destaque e secundários) */
 
 .projeto-destaque{
     width: min(100% - 2rem, 42rem);
@@ -123,7 +123,7 @@ section.content-intro{
     text-transform: uppercase;
 }
 
-.botao-calculadora{
+.botao-projeto{
     position: relative;
     isolation: isolate;
     display:block;
@@ -151,7 +151,7 @@ section.content-intro{
 
 /* Camada transparente */
 
-.botao-calculadora::before{
+.botao-projeto::before{
     position: absolute;
     z-index: 1;
     inset: 0;
@@ -165,7 +165,7 @@ section.content-intro{
 
 /* Reflexo que transparece cartão hover */
 
-.botao-calculadora__brilho{
+.botao-projeto__brilho{
     position: absolute;
     z-index: 0;
     top: -50%;
@@ -182,7 +182,7 @@ section.content-intro{
     pointer-events: none;
 }
 
-.botao-calculadora__conteudo{
+.botao-projeto__conteudo{
     position: relative;
     z-index: 1;
     display: flex;
@@ -193,8 +193,8 @@ section.content-intro{
     backdrop-filter: blur(2px);
 }
 
-.botao-calculadora__eyebrow,
-.botao-calculadora__acao{
+.botao-projeto__eyebrow,
+.botao-projeto__acao{
     color:#8cf7ff;
     font-size: 0.78rem;
     font-weight: 700;
@@ -202,7 +202,7 @@ section.content-intro{
     text-transform: uppercase;
 }
 
-.botao-calculadora__texto{
+.botao-projeto__texto{
     margin: 0.55rem 0 0.8rem;
     color: #ffffff;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -212,7 +212,7 @@ section.content-intro{
     text-shadow: 0 0 1rem rgba(91,240,255,0.82);
 }
 
-.botao-calculadora__acao{
+.botao-projeto__acao{
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -220,7 +220,7 @@ section.content-intro{
     letter-spacing: 0.08em;
 }
 
-.botao-calculadora:hover{
+.botao-projeto:hover{
     border-color: #a8fbff;
     box-shadow:
         0 0 0 1px rgba(168,251,255,0.38) inset,
@@ -229,17 +229,17 @@ section.content-intro{
     transform: translateY(-0.45rem) scale(1.015);
 }
 
-.botao-calculadora:hover .botao-calculadora__brilho{
+.botao-projeto:hover .botao-projeto__brilho{
     left: 120%;
     opacity: 0.75;
 }
 
-.botao-calculadora:focus-visible{
+.botao-projeto:focus-visible{
     outline: 3px solid #ffffff;
     outline-offset: 5px;
 }
 
-.botao-calculadora:active{
+.botao-projeto:active{
     transform: translateY(-0.1rem) scale(0.985);
 }
 
@@ -249,23 +249,98 @@ section.content-intro{
         margin-top: 2rem;
     }
 
-    .botao-calculadora,
-    .botao-calculadora__conteudo{
+    .botao-projeto,
+    .botao-projeto__conteudo{
         min-height: 11rem;
     }
 
-    .botao-calculadora__conteudo{
+    .botao-projeto__conteudo{
         padding: 1.35rem;
     }
 }
 
 @media(prefers-reduced-motion: reduce){
-    .botao-calculadora,
-    .botao-calculadora__brilho{
+    .botao-projeto,
+    .botao-projeto__brilho{
         transition: none;
     }
 
-    .botao-calculadora:hover{
+    .botao-projeto:hover{
         transform: none;
+    }
+}
+
+/* ====================================================== */
+/* Variante: Aranduê (projeto em destaque) */
+
+.botao-projeto--arandue{
+    border-color: rgba(173,139,255,0.8);
+    background:
+        linear-gradient(115deg,
+            rgba(22,14,44,0.95),
+            rgba(64,40,130,0.62)),
+            url("../img/arandue/dashboard.webp") center/cover no-repeat;
+    box-shadow:
+        0 0 0 1px rgba(196,170,255,0.16) inset,
+        0 0 1.5rem rgba(155,124,244,0.38),
+        0 1rem 2.5rem rgba(20,10,45,0.3);
+}
+
+.botao-projeto--arandue .botao-projeto__eyebrow{
+    color: #d2c2ff;
+}
+
+.botao-projeto--arandue .botao-projeto__texto{
+    text-shadow: 0 0 1rem rgba(173,139,255,0.85);
+}
+
+.botao-projeto__descricao{
+    max-width: 28rem;
+    margin-bottom: 1rem;
+    color: #ece6ff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.botao-projeto--arandue:hover{
+    border-color: #d2c2ff;
+    box-shadow:
+        0 0 0 1px rgba(210,194,255,0.4) inset,
+        0 0 2.5rem rgba(155,124,244,0.7),
+        0 1.25rem 3rem rgba(20,10,45,0.4);
+}
+
+/* ====================================================== */
+/* Variante: projeto secundário (cartão menor, abaixo do destaque) */
+
+.projeto-destaque__titulo--outros{
+    margin-top: 2.25rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.botao-projeto--secundario,
+.botao-projeto--secundario .botao-projeto__conteudo{
+    min-height: 8rem;
+}
+
+.botao-projeto--secundario .botao-projeto__conteudo{
+    padding: 1.4rem 2rem;
+}
+
+.botao-projeto--secundario .botao-projeto__texto{
+    margin: 0.35rem 0 0.5rem;
+    font-size: clamp(1.25rem,4vw,1.7rem);
+}
+
+@media (max-width: 480px){
+    .botao-projeto--secundario,
+    .botao-projeto--secundario .botao-projeto__conteudo{
+        min-height: 7rem;
+    }
+
+    .botao-projeto--secundario .botao-projeto__conteudo{
+        padding: 1.2rem 1.35rem;
     }
 }

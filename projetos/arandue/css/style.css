@@ -1,0 +1,324 @@
+/* Página-vitrine do Aranduê. Segue o tema claro/escuro do portfólio (chave "tema"). */
+
+:root {
+  --fundo: #f8fafc;
+  --texto: #0f172a;
+  --suave: #475569;
+  --cartao: #ffffff;
+  --borda: #e2e8f0;
+  --roxo: #5b3fc4;
+  --roxo-claro: #ede8ff;
+  --neon: rgba(155, 124, 244, 0.35);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root.dark {
+  --fundo: #0f172a;
+  --texto: #e2e8f0;
+  --suave: #a5b4c8;
+  --cartao: #16213a;
+  --borda: #26324d;
+  --roxo: #c4b2ff;
+  --roxo-claro: #2a2350;
+  --neon: rgba(155, 124, 244, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.voltar {
+  display: inline-flex;
+  gap: 0.4rem;
+  margin: 1.25rem 1rem 0;
+  color: var(--roxo);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+.hero,
+main,
+footer {
+  width: min(100% - 2rem, 60rem);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 2.5rem 0 1rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--roxo);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0.4rem 0 0.6rem;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 1.5rem var(--neon);
+}
+
+.lead {
+  max-width: 40rem;
+  margin: 0 auto;
+  color: var(--suave);
+  font-size: 1.1rem;
+}
+
+.selo {
+  display: inline-block;
+  margin: 1.2rem 0 0;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--roxo-claro);
+  color: var(--roxo);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.3rem;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.botao.primario {
+  background: linear-gradient(115deg, #3b2585, #6d4fd6);
+  color: #ffffff;
+  box-shadow: 0 0 1.2rem var(--neon);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.botao.primario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 2rem var(--neon);
+}
+
+.botao.primario:focus-visible,
+.voltar:focus-visible {
+  outline: 3px solid var(--roxo);
+  outline-offset: 4px;
+}
+
+.botao.desativado {
+  border: 1px dashed var(--borda);
+  color: var(--suave);
+  cursor: not-allowed;
+}
+
+section {
+  margin-top: 3rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+}
+
+section > p {
+  color: var(--suave);
+}
+
+/* Galeria */
+
+.galeria {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.galeria figure {
+  margin: 0;
+}
+
+.galeria img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--borda);
+  border-radius: 0.9rem;
+  box-shadow: 0 0.8rem 2rem rgba(15, 23, 42, 0.12);
+}
+
+.galeria figcaption {
+  margin-top: 0.5rem;
+  color: var(--suave);
+  font-size: 0.85rem;
+}
+
+.galeria__principal {
+  grid-column: 1 / -1;
+}
+
+.galeria__celular img {
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.galeria__celular figcaption {
+  text-align: center;
+}
+
+/* Cartões de funcionalidades */
+
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cartoes li {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--borda);
+  border-radius: 0.9rem;
+  background: var(--cartao);
+}
+
+.cartoes strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--roxo);
+}
+
+.cartoes span {
+  color: var(--suave);
+  font-size: 0.95rem;
+}
+
+/* Tecnologias */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--roxo-claro);
+  color: var(--roxo);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Números */
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.numeros li {
+  padding: 1.1rem;
+  border: 1px solid var(--borda);
+  border-radius: 0.9rem;
+  background: var(--cartao);
+  text-align: center;
+}
+
+.numeros strong {
+  display: block;
+  color: var(--roxo);
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.numeros span {
+  color: var(--suave);
+  font-size: 0.85rem;
+}
+
+.lista,
+.roteiro {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--suave);
+}
+
+.lista li,
+.roteiro li {
+  margin-bottom: 0.5rem;
+}
+
+.roteiro strong {
+  color: var(--texto);
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--borda);
+}
+
+footer .voltar {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .galeria,
+  .numeros {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .botao.primario {
+    transition: none;
+  }
+
+  .botao.primario:hover {
+    transform: none;
+  }
+}

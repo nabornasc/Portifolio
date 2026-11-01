@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aranduê: SaaS de gestão para MEIs com vendas, estoque, clientes e caixa, multiempresa e controle de acesso por papel."
+    />
+    <title>Aranduê · Portfólio Nabor N Silva</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="arandue/css/style.css" />
+    <script>
+      // Aplica o tema salvo no portfólio antes da página aparecer (evita piscar).
+      if (localStorage.getItem("tema") === "escuro") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <a class="voltar" href="../index.html"
+      ><span aria-hidden="true">←</span> Voltar ao portfólio</a
+    >
+
+    <header class="hero">
+      <p class="eyebrow">Projeto 02 · SaaS full-stack · Em desenvolvimento</p>
+      <h1>Aranduê</h1>
+      <p class="lead">
+        Gestão simples para microempreendedores individuais: vendas, estoque,
+        clientes e caixa em um só lugar, com dados isolados por empresa e
+        acesso de acordo com o papel de cada pessoa.
+      </p>
+      <p class="selo">
+        <span aria-hidden="true">🌱</span> Alinhado ao ODS 1 — Erradicação da
+        Pobreza
+      </p>
+
+      <div class="acoes">
+        <a class="botao primario" href="https://github.com/nabornasc/arandue">
+          Ver código no GitHub <span aria-hidden="true">→</span>
+        </a>
+        <span class="botao desativado" aria-disabled="true">
+          Demo ao vivo · em breve
+        </span>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="titulo-telas">
+        <h2 id="titulo-telas">Telas</h2>
+        <div class="galeria">
+          <figure class="galeria__principal">
+            <img
+              src="../img/arandue/dashboard.webp"
+              alt="Visão geral do Aranduê com faturamento do mês, despesas pagas, saldo atual, pedidos pendentes e últimos pedidos."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Visão geral com o resumo financeiro do mês.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/arandue/pedidos.webp"
+              alt="Lista de pedidos com cliente, data, itens, status editável e total."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>
+              Pedidos com vários itens, baixa de estoque e status.
+            </figcaption>
+          </figure>
+          <figure class="galeria__celular">
+            <img
+              src="../img/arandue/mobile.webp"
+              alt="Visão geral do Aranduê em tela de celular."
+              width="780"
+              height="1688"
+              loading="lazy"
+            />
+            <figcaption>Interface responsiva no celular.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="titulo-problema">
+        <h2 id="titulo-problema">O problema</h2>
+        <p>
+          Muitos MEIs controlam vendas no caderno e o caixa de cabeça. Sem
+          saber quanto entrou, quanto saiu e o que ainda falta receber, fica
+          difícil precificar, planejar compras e crescer. O Aranduê reúne essas
+          informações em uma interface pensada para quem não é da área de
+          tecnologia.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-funcionalidades">
+        <h2 id="titulo-funcionalidades">O que já funciona</h2>
+        <ul class="cartoes">
+          <li>
+            <strong>Multiempresa</strong>
+            <span
+              >Cada negócio tem sua conta; os dados de uma empresa nunca
+              aparecem para outra.</span
+            >
+          </li>
+          <li>
+            <strong>Papéis de acesso</strong>
+            <span
+              >Proprietário, vendedor e contador veem e fazem apenas o que lhes
+              cabe.</span
+            >
+          </li>
+          <li>
+            <strong>Vendas e estoque</strong>
+            <span
+              >Pedidos com vários itens baixam o estoque automaticamente e
+              nunca vendem a mesma unidade duas vezes.</span
+            >
+          </li>
+          <li>
+            <strong>Caixa sincronizado</strong>
+            <span
+              >Pedido pago e despesa paga entram no caixa sozinhos; o saldo
+              fica sempre coerente.</span
+            >
+          </li>
+          <li>
+            <strong>Auditoria</strong>
+            <span>Registro de quem alterou o quê e quando.</span>
+          </li>
+          <li>
+            <strong>Responsivo</strong>
+            <span>Funciona bem no computador e no celular.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-stack">
+        <h2 id="titulo-stack">Como foi construído</h2>
+        <ul class="tags" aria-label="Tecnologias">
+          <li>TypeScript</li>
+          <li>React 19</li>
+          <li>Vite</li>
+          <li>TanStack Query</li>
+          <li>Node.js 24</li>
+          <li>Fastify</li>
+          <li>PostgreSQL</li>
+          <li>Drizzle ORM</li>
+          <li>Zod</li>
+          <li>Vitest</li>
+          <li>GitHub Actions</li>
+        </ul>
+        <p>
+          O backend concentra as regras de negócio em uma camada de serviços
+          que verifica a permissão e a empresa em toda operação. Os mesmos
+          schemas de validação são usados no navegador e no servidor.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-qualidade">
+        <h2 id="titulo-qualidade">Segurança e qualidade</h2>
+        <ul class="numeros">
+          <li><strong>20</strong><span>testes automatizados de integração</span></li>
+          <li><strong>100</strong><span>em acessibilidade no Lighthouse (celular)</span></li>
+          <li><strong>~116 KB</strong><span>de JavaScript inicial (gzip)</span></li>
+        </ul>
+        <ul class="lista">
+          <li>Senhas com Argon2id e sessão em cookie seguro, revogada no logout.</li>
+          <li>Proteção contra CSRF e limite de tentativas no login.</li>
+          <li>Testes que garantem que uma empresa não acessa dados de outra.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-proximos">
+        <h2 id="titulo-proximos">Próximos passos</h2>
+        <ol class="roteiro">
+          <li><strong>Orçamentos e equipe:</strong> orçamento que vira pedido, fornecedores e gestão de usuários.</li>
+          <li><strong>CRM e indicadores:</strong> funil de leads e KPIs, como ticket médio e limite anual do MEI.</li>
+          <li><strong>Assistente de IA:</strong> chat de ajuda e bot no Telegram com confirmação antes de gravar.</li>
+          <li><strong>Publicação:</strong> deploy em São Paulo e demo ao vivo nesta página.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <a class="voltar" href="../index.html"
+        ><span aria-hidden="true">←</span> Voltar ao portfólio</a
+      >
+    </footer>
+  </body>
+</html>

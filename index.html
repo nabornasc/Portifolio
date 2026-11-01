@@ -33,22 +33,45 @@
 
     <hr />
 
-    <section class="projeto-destaque" aria-label="titulo-calculadora">
-      <h2 id="titulo-calculadora" class="projeto-destaque__titulo">
+    <section class="projeto-destaque" aria-labelledby="titulo-destaque">
+      <h2 id="titulo-destaque" class="projeto-destaque__titulo">
         Projeto em destaque
       </h2>
 
       <a
-        class="botao-calculadora"
+        class="botao-projeto botao-projeto--arandue"
+        href="projetos/arandue.html"
+        aria-label="Conhecer o Aranduê, SaaS de gestão para MEIs"
+      >
+        <span class="botao-projeto__brilho" aria-hidden="true"></span>
+        <span class="botao-projeto__conteudo">
+          <span class="botao-projeto__eyebrow">Projeto 02 · SaaS full-stack</span>
+          <span class="botao-projeto__texto">Aranduê</span>
+          <span class="botao-projeto__descricao"
+            >Vendas, estoque, clientes e caixa para MEIs, com multiempresa e
+            controle de acesso.</span
+          >
+          <span class="botao-projeto__acao"
+            >Conhecer projeto <span aria-hidden="true">→</span></span
+          >
+        </span>
+      </a>
+
+      <h2 class="projeto-destaque__titulo projeto-destaque__titulo--outros">
+        Outros projetos
+      </h2>
+
+      <a
+        class="botao-projeto botao-projeto--secundario"
         href="projetos/calculadora.html"
         aria-label="Abrir Minha Calculadora"
       >
-        <span class="botao-calculadora__brilho" aria-hidden="true"></span>
-        <span class="botao-calculadora__conteudo">
-          <span class="botao-calculadora__eyebrow">Projeto 01</span>
-          <span class="botao-calculadora__texto">Minha Calculadora</span>
-          <span class="botao-calculadora__acao"
-            >Abrir Projeto <span aria-hidden="true">→</span></span
+        <span class="botao-projeto__brilho" aria-hidden="true"></span>
+        <span class="botao-projeto__conteudo">
+          <span class="botao-projeto__eyebrow">Projeto 01</span>
+          <span class="botao-projeto__texto">Minha Calculadora</span>
+          <span class="botao-projeto__acao"
+            >Abrir projeto <span aria-hidden="true">→</span></span
           >
         </span>
       </a>
