@@ -8,7 +8,7 @@ apresentados nele:
 
 - **Aranduê** *(projeto em destaque)* — SaaS de gestão para MEIs, com vendas,
   estoque, clientes e caixa, multiempresa e controle de acesso por papel. O
-  código fica em [nabornasc/arandue](https://github.com/nabornasc/arandue).
+  código fica em [nabornasc/Projeto-Final-Arandu-e-Recode](https://github.com/nabornasc/Projeto-Final-Arandu-e-Recode).
 - **Minha Calculadora** — calculadora web, atualmente na versão **0.1**.
 
 O objetivo é construir uma experiência simples, visual e funcional para
