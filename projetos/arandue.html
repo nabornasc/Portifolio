@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Aranduê: SaaS de gestão para MEIs com vendas, estoque, clientes e caixa, multiempresa e controle de acesso por papel."
+      content="Aranduê: SaaS de gestão para MEIs com orçamentos, vendas, estoque, financeiro, CRM e cadastro de pessoas, multiempresa e com permissões por ação."
     />
     <title>Aranduê · Portfólio Nabor N Silva</title>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
@@ -23,12 +23,13 @@
     >
 
     <header class="hero">
-      <p class="eyebrow">Projeto 02 · SaaS full-stack · Em desenvolvimento</p>
+      <p class="eyebrow">Projeto 02 · SaaS full-stack · v2.1 · em evolução contínua</p>
       <h1>Aranduê</h1>
       <p class="lead">
-        Gestão simples para microempreendedores individuais: vendas, estoque,
-        clientes e caixa em um só lugar, com dados isolados por empresa e
-        acesso de acordo com o papel de cada pessoa.
+        Gestão para microempreendedores individuais: orçamentos, vendas,
+        estoque, financeiro, CRM e cadastro de clientes e fornecedores em um só
+        lugar, com dados isolados por empresa e permissões ajustadas a cada
+        pessoa da equipe.
       </p>
       <p class="selo">
         <span aria-hidden="true">🌱</span> Alinhado ao ODS 1 — Erradicação da
@@ -49,27 +50,65 @@
       <section aria-labelledby="titulo-telas">
         <h2 id="titulo-telas">Telas</h2>
         <div class="galeria">
-          <figure class="galeria__principal">
+          <figure class="galeria__larga">
             <img
               src="../img/arandue/dashboard.webp"
-              alt="Visão geral do Aranduê com faturamento do mês, despesas pagas, saldo atual, pedidos pendentes e últimos pedidos."
+              alt="Visão geral do Aranduê com faturamento do mês, despesas pagas, saldo atual, pedidos pendentes e limite anual do MEI."
               width="1280"
               height="800"
               loading="lazy"
             />
-            <figcaption>Visão geral com o resumo financeiro do mês.</figcaption>
+            <figcaption>Visão geral com o resumo financeiro do mês e o acompanhamento do limite do MEI.</figcaption>
+          </figure>
+          <figure class="galeria__larga">
+            <img
+              src="../img/arandue/lado-a-lado.webp"
+              alt="Pedido e o orçamento que o originou abertos lado a lado, com abas das telas abertas no topo."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Telas abertas viram abas; dá para trabalhar em duas lado a lado, como um pedido e o orçamento de origem.</figcaption>
           </figure>
           <figure>
             <img
-              src="../img/arandue/pedidos.webp"
-              alt="Lista de pedidos com cliente, data, itens, status editável e total."
+              src="../img/arandue/orcamentos.webp"
+              alt="Lista de orçamentos com status e o menu de ações aberto: abrir, aprovar, recusar, duplicar, copiar para pedido e excluir."
               width="1280"
               height="800"
               loading="lazy"
             />
-            <figcaption>
-              Pedidos com vários itens, baixa de estoque e status.
-            </figcaption>
+            <figcaption>Menu de ações que mostra só o que vale para o status e a permissão de cada pessoa.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/arandue/crm.webp"
+              alt="Funil de vendas em colunas com leads, origem, responsável e próxima ação; ações atrasadas em destaque."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>CRM com funil de vendas, próxima ação e alerta de atraso.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/arandue/permissoes.webp"
+              alt="Edição de um grupo de acesso com a matriz de permissões por área e por ação."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Grupos de acesso com permissões por ação (ver, criar, aprovar, dar baixa...).</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/arandue/cadastro.webp"
+              alt="Cadastro de cliente pessoa jurídica com CNPJ, busca na Receita, papéis e contatos."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Cadastro único de pessoas com busca de CNPJ e CEP.</figcaption>
           </figure>
           <figure class="galeria__celular">
             <img
@@ -91,7 +130,7 @@
           saber quanto entrou, quanto saiu e o que ainda falta receber, fica
           difícil precificar, planejar compras e crescer. O Aranduê reúne essas
           informações em uma interface pensada para quem não é da área de
-          tecnologia.
+          tecnologia, e acompanha o negócio quando ele ganha equipe.
         </p>
       </section>
 
@@ -99,40 +138,65 @@
         <h2 id="titulo-funcionalidades">O que já funciona</h2>
         <ul class="cartoes">
           <li>
+            <strong>Orçamento ao recebimento</strong>
+            <span
+              >Orçamento enviado, aprovado e convertido em pedido; o estoque
+              baixa e o recebimento entra no caixa.</span
+            >
+          </li>
+          <li>
+            <strong>Permissões sob medida</strong>
+            <span
+              >49 permissões por ação em grupos de acesso. Um vendedor pode
+              aprovar os próprios orçamentos enquanto só o financeiro dá
+              baixa.</span
+            >
+          </li>
+          <li>
+            <strong>CRM com funil</strong>
+            <span
+              >Leads por etapa, histórico de atendimentos por canal e lead
+              ganho virando cliente sem duplicar cadastro.</span
+            >
+          </li>
+          <li>
+            <strong>Cadastro único</strong>
+            <span
+              >Clientes, fornecedores e transportadoras num só cadastro, com
+              CPF/CNPJ validados e busca de CNPJ e CEP.</span
+            >
+          </li>
+          <li>
+            <strong>Área de trabalho com abas</strong>
+            <span
+              >Cada tela aberta vira uma aba que guarda o que foi digitado; duas
+              podem ficar lado a lado.</span
+            >
+          </li>
+          <li>
+            <strong>Financeiro</strong>
+            <span
+              >Contas a receber e a pagar, contas bancárias e caixa
+              sincronizado com pedidos e despesas.</span
+            >
+          </li>
+          <li>
             <strong>Multiempresa</strong>
             <span
-              >Cada negócio tem sua conta; os dados de uma empresa nunca
-              aparecem para outra.</span
+              >Os dados de uma empresa nunca aparecem para outra; numeração de
+              pedidos e orçamentos própria.</span
             >
           </li>
           <li>
-            <strong>Papéis de acesso</strong>
+            <strong>Limite do MEI</strong>
             <span
-              >Proprietário, vendedor e contador veem e fazem apenas o que lhes
-              cabe.</span
-            >
-          </li>
-          <li>
-            <strong>Vendas e estoque</strong>
-            <span
-              >Pedidos com vários itens baixam o estoque automaticamente e
-              nunca vendem a mesma unidade duas vezes.</span
-            >
-          </li>
-          <li>
-            <strong>Caixa sincronizado</strong>
-            <span
-              >Pedido pago e despesa paga entram no caixa sozinhos; o saldo
-              fica sempre coerente.</span
+              >O faturamento do ano é comparado com o limite informado pela
+              empresa.</span
             >
           </li>
           <li>
             <strong>Auditoria</strong>
             <span>Registro de quem alterou o quê e quando.</span>
-          </li>
-          <li>
-            <strong>Responsivo</strong>
-            <span>Funciona bem no computador e no celular.</span>
           </li>
         </ul>
       </section>
@@ -154,32 +218,38 @@
         </ul>
         <p>
           O backend concentra as regras de negócio em uma camada de serviços
-          que verifica a permissão e a empresa em toda operação. Os mesmos
-          schemas de validação são usados no navegador e no servidor.
+          que verifica a permissão do grupo e a empresa em toda operação. Os
+          mesmos schemas de validação e o mesmo catálogo de permissões são
+          usados no navegador e no servidor. Cada ação do sistema é definida
+          uma única vez e aparece onde faz sentido: listas, telas e, em breve,
+          busca rápida e atalhos.
         </p>
       </section>
 
       <section aria-labelledby="titulo-qualidade">
         <h2 id="titulo-qualidade">Segurança e qualidade</h2>
         <ul class="numeros">
-          <li><strong>20</strong><span>testes automatizados de integração</span></li>
-          <li><strong>100</strong><span>em acessibilidade no Lighthouse (celular)</span></li>
-          <li><strong>~116 KB</strong><span>de JavaScript inicial (gzip)</span></li>
+          <li><strong>55</strong><span>testes automatizados de integração</span></li>
+          <li><strong>100</strong><span>em acessibilidade no Lighthouse (celular e desktop)</span></li>
+          <li><strong>~121 KB</strong><span>de JavaScript inicial (gzip)</span></li>
         </ul>
         <ul class="lista">
           <li>Senhas com Argon2id e sessão em cookie seguro, revogada no logout.</li>
-          <li>Proteção contra CSRF e limite de tentativas no login.</li>
-          <li>Testes que garantem que uma empresa não acessa dados de outra.</li>
+          <li>Proteção contra CSRF e limite de tentativas no login e nas consultas externas.</li>
+          <li>Testes que garantem que uma empresa não acessa dados de outra e que ninguém concede permissões que não tem.</li>
+          <li>Consultas de CNPJ e CEP feitas pelo servidor: só o número sai do sistema.</li>
         </ul>
       </section>
 
       <section aria-labelledby="titulo-proximos">
-        <h2 id="titulo-proximos">Próximos passos</h2>
+        <h2 id="titulo-proximos">Próximas versões</h2>
         <ol class="roteiro">
-          <li><strong>Orçamentos e equipe:</strong> orçamento que vira pedido, fornecedores e gestão de usuários.</li>
-          <li><strong>CRM e indicadores:</strong> funil de leads e KPIs, como ticket médio e limite anual do MEI.</li>
-          <li><strong>Assistente de IA:</strong> chat de ajuda e bot no Telegram com confirmação antes de gravar.</li>
+          <li><strong>Oportunidades e rastreio:</strong> cada orçamento e pedido ligado à negociação que o originou, mesmo quando duplicado ou copiado.</li>
           <li><strong>Publicação:</strong> deploy em São Paulo e demo ao vivo nesta página.</li>
+          <li><strong>Produtividade:</strong> busca rápida, atalhos de teclado e filtros avançados.</li>
+          <li><strong>Documentos:</strong> orçamentos em seções, parcelas e impressão em PDF e DOCX.</li>
+          <li><strong>Gestão:</strong> assistente de precificação e painel com indicadores personalizáveis.</li>
+          <li><strong>Assistente de IA:</strong> chat de ajuda e bot no Telegram com confirmação antes de gravar.</li>
         </ol>
       </section>
     </main>

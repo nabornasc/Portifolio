@@ -159,8 +159,8 @@ section > p {
 
 .galeria {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
 }
 
 .galeria figure {
@@ -182,7 +182,8 @@ section > p {
   font-size: 0.85rem;
 }
 
-.galeria__principal {
+.galeria__larga,
+.galeria__celular {
   grid-column: 1 / -1;
 }
 

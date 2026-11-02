@@ -6,8 +6,9 @@
 Este repositório reúne a evolução do meu portfólio pessoal e os projetos
 apresentados nele:
 
-- **Aranduê** *(projeto em destaque)* — SaaS de gestão para MEIs, com vendas,
-  estoque, clientes e caixa, multiempresa e controle de acesso por papel. O
+- **Aranduê** *(projeto em destaque, v2.1)* — SaaS de gestão para MEIs, com
+  orçamentos, vendas, estoque, financeiro, CRM e cadastro de pessoas,
+  multiempresa e com permissões por ação em grupos de acesso. O
   código fica em [nabornasc/Projeto-Final-Arandu-e-Recode](https://github.com/nabornasc/Projeto-Final-Arandu-e-Recode).
 - **Minha Calculadora** — calculadora web, atualmente na versão **0.1**.
 
