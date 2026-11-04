@@ -53,12 +53,12 @@
           <figure class="galeria__larga">
             <img
               src="../img/arandue/dashboard.webp"
-              alt="Visão geral do Aranduê com faturamento do mês, despesas pagas, saldo atual, pedidos pendentes e limite anual do MEI."
+              alt="Visão geral do Aranduê com faturamento do mês, despesas pagas, saldo atual, pedidos pendentes e últimos pedidos."
               width="1280"
               height="800"
               loading="lazy"
             />
-            <figcaption>Visão geral com o resumo financeiro do mês e o acompanhamento do limite do MEI.</figcaption>
+            <figcaption>Visão geral com o resumo financeiro do mês e os últimos pedidos.</figcaption>
           </figure>
           <figure class="galeria__larga">
             <img
@@ -79,6 +79,16 @@
               loading="lazy"
             />
             <figcaption>Cada alteração mostra quem fez, quando e o que mudou, com os valores de antes e depois.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/arandue/auditoria.webp"
+              alt="Tela de auditoria com filtros por usuário, módulo, ação e período, e a lista de registros com data, hora e usuário."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Auditoria de todos os módulos, com filtros por usuário, módulo, ação e período.</figcaption>
           </figure>
           <figure>
             <img
@@ -167,7 +177,7 @@
           <li>
             <strong>Permissões sob medida</strong>
             <span
-              >52 permissões por ação em grupos de acesso. Um vendedor pode
+              >53 permissões por ação em grupos de acesso. Um vendedor pode
               aprovar os próprios orçamentos enquanto só o financeiro dá
               baixa.</span
             >
@@ -218,9 +228,9 @@
           <li>
             <strong>Histórico de alterações</strong>
             <span
-              >Em orçamentos e pedidos: quem fez, quando e o que mudou, com
-              motivo obrigatório ao recusar ou cancelar. Documento excluído
-              deixa o registro.</span
+              >Em todos os módulos: quem fez, quando e o que mudou, com motivo
+              obrigatório ao recusar ou cancelar. Documento excluído deixa o
+              registro, e dados pessoais não ficam guardados nele.</span
             >
           </li>
         </ul>
@@ -255,8 +265,8 @@
       <section aria-labelledby="titulo-qualidade">
         <h2 id="titulo-qualidade">Segurança e qualidade</h2>
         <ul class="numeros">
-          <li><strong>90</strong><span>testes automatizados de integração</span></li>
-          <li><strong>17</strong><span>testes ponta a ponta no navegador</span></li>
+          <li><strong>101</strong><span>testes automatizados de integração</span></li>
+          <li><strong>20</strong><span>testes ponta a ponta no navegador</span></li>
           <li><strong>100</strong><span>em acessibilidade no Lighthouse (celular e desktop)</span></li>
           <li><strong>~118 KB</strong><span>de JavaScript inicial (gzip)</span></li>
         </ul>
@@ -265,13 +275,13 @@
           <li>Proteção contra CSRF e limite de tentativas no login e nas consultas externas.</li>
           <li>Testes que garantem que uma empresa não acessa dados de outra e que ninguém concede permissões que não tem.</li>
           <li>Consultas de CNPJ e CEP feitas pelo servidor: só o número sai do sistema.</li>
+          <li>Histórico protegido: CPF/CNPJ, e-mail, telefone, endereço e senha aparecem só como "alterado", sem guardar o valor.</li>
         </ul>
       </section>
 
       <section aria-labelledby="titulo-proximos">
         <h2 id="titulo-proximos">Próximas versões</h2>
         <ol class="roteiro">
-          <li><strong>Histórico completo:</strong> registro detalhado em todos os módulos e tela geral de auditoria com filtros.</li>
           <li><strong>Publicação:</strong> deploy em São Paulo e demo ao vivo nesta página.</li>
           <li><strong>Produtividade:</strong> busca rápida, atalhos de teclado e filtros avançados.</li>
           <li><strong>Documentos:</strong> orçamentos em seções, parcelas, espelho do cliente e espelho interno com margem, em PDF e DOCX.</li>
