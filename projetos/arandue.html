@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Aranduê: SaaS de gestão para MEIs com orçamentos, vendas, estoque, financeiro, CRM e cadastro de pessoas, multiempresa e com permissões por ação."
+      content="Aranduê: SaaS de gestão para MEIs com orçamentos, vendas, estoque, financeiro, CRM e histórico de alterações, multiempresa e com permissões por ação."
     />
     <title>Aranduê · Portfólio Nabor N Silva</title>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
@@ -23,7 +23,7 @@
     >
 
     <header class="hero">
-      <p class="eyebrow">Projeto 02 · SaaS full-stack · v2.1 · em evolução contínua</p>
+      <p class="eyebrow">Projeto 02 · SaaS full-stack · v2.2 · em evolução contínua</p>
       <h1>Aranduê</h1>
       <p class="lead">
         Gestão para microempreendedores individuais: orçamentos, vendas,
@@ -70,10 +70,30 @@
             />
             <figcaption>Telas abertas viram abas; dá para trabalhar em duas lado a lado, como um pedido e o orçamento de origem.</figcaption>
           </figure>
+          <figure class="galeria__larga">
+            <img
+              src="../img/arandue/historico-detalhe.webp"
+              alt="Detalhe de uma alteração em um orçamento: quem alterou, data e hora, e os valores de antes e depois do desconto, do total e dos itens."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Cada alteração mostra quem fez, quando e o que mudou, com os valores de antes e depois.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/arandue/historico.webp"
+              alt="Aba Histórico de um orçamento com a lista de ações: criou, alterou e enviou ao cliente, com usuário e horário."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>Histórico em cada orçamento e pedido; o clique abre o detalhe da alteração.</figcaption>
+          </figure>
           <figure>
             <img
               src="../img/arandue/orcamentos.webp"
-              alt="Lista de orçamentos com status e o menu de ações aberto: abrir, aprovar, recusar, duplicar, copiar para pedido e excluir."
+              alt="Lista de orçamentos com status e o menu de ações aberto: abrir, aprovar, recusar, cancelar, duplicar, copiar para pedido e vincular a uma oportunidade."
               width="1280"
               height="800"
               loading="lazy"
@@ -83,12 +103,12 @@
           <figure>
             <img
               src="../img/arandue/crm.webp"
-              alt="Funil de vendas em colunas com leads, origem, responsável e próxima ação; ações atrasadas em destaque."
+              alt="Funil de vendas em colunas com oportunidades, valor total por etapa, responsável e próxima ação; ações atrasadas em destaque."
               width="1280"
               height="800"
               loading="lazy"
             />
-            <figcaption>CRM com funil de vendas, próxima ação e alerta de atraso.</figcaption>
+            <figcaption>Funil com etapas configuráveis, valor por coluna, próxima ação e alerta de atraso.</figcaption>
           </figure>
           <figure>
             <img
@@ -147,16 +167,17 @@
           <li>
             <strong>Permissões sob medida</strong>
             <span
-              >49 permissões por ação em grupos de acesso. Um vendedor pode
+              >52 permissões por ação em grupos de acesso. Um vendedor pode
               aprovar os próprios orçamentos enquanto só o financeiro dá
               baixa.</span
             >
           </li>
           <li>
-            <strong>CRM com funil</strong>
+            <strong>Oportunidades e rastreio</strong>
             <span
-              >Leads por etapa, histórico de atendimentos por canal e lead
-              ganho virando cliente sem duplicar cadastro.</span
+              >Funil configurável que avança sozinho com os documentos. Cada
+              orçamento e pedido mostra de onde veio, e a oportunidade ganha
+              vira cliente sem duplicar cadastro.</span
             >
           </li>
           <li>
@@ -195,8 +216,12 @@
             >
           </li>
           <li>
-            <strong>Auditoria</strong>
-            <span>Registro de quem alterou o quê e quando.</span>
+            <strong>Histórico de alterações</strong>
+            <span
+              >Em orçamentos e pedidos: quem fez, quando e o que mudou, com
+              motivo obrigatório ao recusar ou cancelar. Documento excluído
+              deixa o registro.</span
+            >
           </li>
         </ul>
       </section>
@@ -214,6 +239,7 @@
           <li>Drizzle ORM</li>
           <li>Zod</li>
           <li>Vitest</li>
+          <li>Playwright</li>
           <li>GitHub Actions</li>
         </ul>
         <p>
@@ -229,9 +255,10 @@
       <section aria-labelledby="titulo-qualidade">
         <h2 id="titulo-qualidade">Segurança e qualidade</h2>
         <ul class="numeros">
-          <li><strong>55</strong><span>testes automatizados de integração</span></li>
+          <li><strong>90</strong><span>testes automatizados de integração</span></li>
+          <li><strong>17</strong><span>testes ponta a ponta no navegador</span></li>
           <li><strong>100</strong><span>em acessibilidade no Lighthouse (celular e desktop)</span></li>
-          <li><strong>~121 KB</strong><span>de JavaScript inicial (gzip)</span></li>
+          <li><strong>~118 KB</strong><span>de JavaScript inicial (gzip)</span></li>
         </ul>
         <ul class="lista">
           <li>Senhas com Argon2id e sessão em cookie seguro, revogada no logout.</li>
@@ -244,10 +271,10 @@
       <section aria-labelledby="titulo-proximos">
         <h2 id="titulo-proximos">Próximas versões</h2>
         <ol class="roteiro">
-          <li><strong>Oportunidades e rastreio:</strong> cada orçamento e pedido ligado à negociação que o originou, mesmo quando duplicado ou copiado.</li>
+          <li><strong>Histórico completo:</strong> registro detalhado em todos os módulos e tela geral de auditoria com filtros.</li>
           <li><strong>Publicação:</strong> deploy em São Paulo e demo ao vivo nesta página.</li>
           <li><strong>Produtividade:</strong> busca rápida, atalhos de teclado e filtros avançados.</li>
-          <li><strong>Documentos:</strong> orçamentos em seções, parcelas e impressão em PDF e DOCX.</li>
+          <li><strong>Documentos:</strong> orçamentos em seções, parcelas, espelho do cliente e espelho interno com margem, em PDF e DOCX.</li>
           <li><strong>Gestão:</strong> assistente de precificação e painel com indicadores personalizáveis.</li>
           <li><strong>Assistente de IA:</strong> chat de ajuda e bot no Telegram com confirmação antes de gravar.</li>
         </ol>
