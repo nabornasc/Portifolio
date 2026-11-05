@@ -6,7 +6,7 @@
 Este repositório reúne a evolução do meu portfólio pessoal e os projetos
 apresentados nele:
 
-- **Aranduê** *(projeto em destaque, v2.3)* — SaaS de gestão para MEIs, com
+- **Arandu Gestão** *(projeto em destaque, v2.3)* — SaaS de gestão para MEIs, com
   orçamentos, vendas, estoque, financeiro, CRM e histórico de alterações,
   multiempresa e com permissões por ação em grupos de acesso. O
   código fica em [nabornasc/Projeto-Final-Arandu-e-Recode](https://github.com/nabornasc/Projeto-Final-Arandu-e-Recode).
@@ -23,15 +23,15 @@ O projeto possui três experiências principais:
 1. **Página inicial do portfólio** — uma apresentação pessoal com slideshow,
    alternância entre tema claro e escuro, o projeto em destaque e, logo abaixo,
    os outros projetos.
-2. **Página-vitrine do Aranduê** — apresenta o problema, as funcionalidades, a
-   stack, os indicadores de qualidade e capturas de tela reais. Como o Aranduê
+2. **Página-vitrine do Arandu Gestão** — apresenta o problema, as funcionalidades, a
+   stack, os indicadores de qualidade e capturas de tela reais. Como o Arandu Gestão
    precisa de servidor e banco de dados, ele não roda no GitHub Pages: a página
-   leva ao código e à [demo ao vivo](https://arandue-mu.vercel.app).
+   leva ao código e à [demo ao vivo](https://arandu-gestao.vercel.app).
 3. **Minha Calculadora** — uma calculadora web com operações básicas, funções
    extras e interface neumórfica responsiva.
 
 Na página inicial, cada projeto tem um cartão interativo com a imagem do próprio
-projeto como fundo, efeito de vidro e neon. O Aranduê usa o cartão grande, em
+projeto como fundo, efeito de vidro e neon. O Arandu Gestão usa o cartão grande, em
 roxo; a calculadora usa a versão compacta, em ciano, logo abaixo.
 
 ## Resultado atual
@@ -126,9 +126,9 @@ para o projeto. Em vez de ser apenas um link, ele combina:
 O resultado é um componente que comunica a proposta do projeto antes mesmo de o
 visitante abrir a calculadora.
 
-### 6. Aranduê como novo destaque
+### 6. Arandu Gestão como novo destaque
 
-Com a chegada do Aranduê, o botão virou um componente reutilizável
+Com a chegada do Arandu Gestão, o botão virou um componente reutilizável
 (`.botao-projeto`), com duas variantes:
 
 - `.botao-projeto--arandue` — cartão grande em roxo, com a tela real do sistema
@@ -136,7 +136,7 @@ Com a chegada do Aranduê, o botão virou um componente reutilizável
 - `.botao-projeto--secundario` — versão compacta, usada pela calculadora abaixo
   do destaque.
 
-A vitrine do Aranduê respeita o tema escolhido no portfólio e foi feita para ser
+A vitrine do Arandu Gestão respeita o tema escolhido no portfólio e foi feita para ser
 lida no celular.
 
 ## Tecnologias utilizadas
@@ -160,10 +160,10 @@ Portifolio/
 │   └── main.js                        # Slideshow e alternância de tema
 ├── img/                               # Imagens, ícones e recursos visuais
 ├── projetos/
-│   ├── arandue.html                   # Página-vitrine do Aranduê
+│   ├── arandue.html                   # Página-vitrine do Arandu Gestão
 │   └── calculadora.html               # Página da calculadora
 ├── projetos/arandue/css/style.css     # Estilos da vitrine (tema claro/escuro)
-├── img/arandue/                       # Capturas de tela do Aranduê
+├── img/arandue/                       # Capturas de tela do Arandu Gestão
 ├── projetos/calculadora/
 │   ├── css/style.css                  # Estilos da calculadora
 │   ├── js/operacoes.js                # Operações matemáticas
