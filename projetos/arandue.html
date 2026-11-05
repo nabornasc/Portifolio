@@ -23,7 +23,7 @@
     >
 
     <header class="hero">
-      <p class="eyebrow">Projeto 02 · SaaS full-stack · v2.2 · em evolução contínua</p>
+      <p class="eyebrow">Projeto 02 · SaaS full-stack · v2.3 · em evolução contínua</p>
       <h1>Aranduê</h1>
       <p class="lead">
         Gestão para microempreendedores individuais: orçamentos, vendas,
@@ -40,10 +40,15 @@
         <a class="botao primario" href="https://github.com/nabornasc/Projeto-Final-Arandu-e-Recode">
           Ver código no GitHub <span aria-hidden="true">→</span>
         </a>
-        <span class="botao desativado" aria-disabled="true">
-          Demo ao vivo · em breve
-        </span>
+        <a class="botao secundario" href="https://arandue-mu.vercel.app">
+          Testar a demo ao vivo <span aria-hidden="true">→</span>
+        </a>
       </div>
+      <p class="demo-acesso">
+        Acesso de teste: <code>dono@atelie.test</code> · senha
+        <code>senha-demo-123</code>. Dados fictícios e compartilhados, que voltam
+        ao padrão às 00h e às 12h de Cuiabá.
+      </p>
     </header>
 
     <main>
@@ -250,6 +255,8 @@
           <li>Zod</li>
           <li>Vitest</li>
           <li>Playwright</li>
+          <li>Vercel</li>
+          <li>Supabase</li>
           <li>GitHub Actions</li>
         </ul>
         <p>
@@ -275,6 +282,7 @@
           <li>Proteção contra CSRF e limite de tentativas no login e nas consultas externas.</li>
           <li>Testes que garantem que uma empresa não acessa dados de outra e que ninguém concede permissões que não tem.</li>
           <li>Consultas de CNPJ e CEP feitas pelo servidor: só o número sai do sistema.</li>
+          <li>No ar com usuário de banco sem poder de alterar a estrutura e RLS em todas as tabelas.</li>
           <li>Histórico protegido: CPF/CNPJ, e-mail, telefone, endereço e senha aparecem só como "alterado", sem guardar o valor.</li>
         </ul>
       </section>
@@ -282,7 +290,6 @@
       <section aria-labelledby="titulo-proximos">
         <h2 id="titulo-proximos">Próximas versões</h2>
         <ol class="roteiro">
-          <li><strong>Publicação:</strong> deploy em São Paulo e demo ao vivo nesta página.</li>
           <li><strong>Produtividade:</strong> busca rápida, atalhos de teclado e filtros avançados.</li>
           <li><strong>Documentos:</strong> orçamentos em seções, parcelas, espelho do cliente e espelho interno com margem, em PDF e DOCX.</li>
           <li><strong>Gestão:</strong> assistente de precificação e painel com indicadores personalizáveis.</li>

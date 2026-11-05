@@ -136,6 +136,22 @@ footer {
   outline-offset: 4px;
 }
 
+.botao.secundario {
+  border: 1px solid var(--borda);
+  color: inherit;
+}
+
+.botao.secundario:hover,
+.botao.secundario:focus-visible {
+  border-color: currentColor;
+}
+
+.demo-acesso {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
 .botao.desativado {
   border: 1px dashed var(--borda);
   color: var(--suave);
