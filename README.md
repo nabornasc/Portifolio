@@ -9,7 +9,7 @@ apresentados nele:
 - **Arandu Gestão** *(projeto em destaque, v2.3)* — SaaS de gestão para MEIs, com
   orçamentos, vendas, estoque, financeiro, CRM e histórico de alterações,
   multiempresa e com permissões por ação em grupos de acesso. O
-  código fica em [nabornasc/Projeto-Final-Arandu-e-Recode](https://github.com/nabornasc/Projeto-Final-Arandu-e-Recode).
+  código fica em [nabornasc/arandu-gestao](https://github.com/nabornasc/arandu-gestao).
 - **Minha Calculadora** — calculadora web, atualmente na versão **0.1**.
 
 O objetivo é construir uma experiência simples, visual e funcional para
