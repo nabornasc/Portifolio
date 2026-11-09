@@ -6,9 +6,10 @@
 Este repositório reúne a evolução do meu portfólio pessoal e os projetos
 apresentados nele:
 
-- **Arandu Gestão** *(projeto em destaque, v2.5)* — SaaS de gestão para MEIs, com
-  orçamentos, vendas, estoque, financeiro, CRM e histórico de alterações,
-  multiempresa e com permissões por ação em grupos de acesso. O
+- **Arandu Gestão** *(projeto em destaque)* — SaaS de gestão para MEIs, com
+  orçamentos, vendas, estoque, compras, financeiro, CRM, agenda, relatórios,
+  histórico de alterações e manual com vídeos dentro do sistema, multiempresa e
+  com permissões por ação em grupos de acesso. O
   código fica em [nabornasc/arandu-gestao](https://github.com/nabornasc/arandu-gestao).
 - **Minha Calculadora** — calculadora web, atualmente na versão **0.1**.
 
