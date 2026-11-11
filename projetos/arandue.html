@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Arandu Gestão: SaaS de gestão para MEIs com orçamentos, vendas, estoque, compras, financeiro, CRM, agenda, relatórios e manual com vídeos, multiempresa e com permissões por ação."
+      content="Arandu Gestão: SaaS de gestão para MEIs com orçamentos, vendas, estoque, compras, financeiro, CRM com anexos, agenda, relatórios, manual com vídeos e assistente de IA no sistema e no Telegram, multiempresa e com permissões por ação."
     />
     <title>Arandu Gestão · Portfólio Nabor N Silva</title>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
@@ -23,14 +23,15 @@
     >
 
     <header class="hero">
-      <p class="eyebrow">Projeto 02 · SaaS full-stack · em evolução contínua</p>
+      <p class="eyebrow">Projeto 02 · SaaS full-stack · concluído</p>
       <h1>Arandu Gestão</h1>
       <p class="lead">
         Gestão para microempreendedores individuais: orçamentos, vendas,
         estoque, compras, financeiro, CRM, agenda e relatórios em um só lugar,
         com dados isolados por empresa, permissões ajustadas a cada pessoa da
-        equipe, um manual com vídeos e um assistente de IA no sistema e no
-        Telegram.
+        equipe, um CRM que reúne o histórico de todos os setores com fotos,
+        vídeos e áudios, um manual com vídeos e um assistente de IA no sistema
+        e no Telegram.
       </p>
       <p class="selo">
         <span aria-hidden="true">🌱</span> Alinhado ao ODS 1 — Erradicação da
@@ -178,6 +179,16 @@
           </figure>
           <figure>
             <img
+              src="../img/arandue/crm-central.webp"
+              alt="Oportunidade no CRM com o rastreio do orçamento e do pedido pago e a linha do tempo com filtros por setor."
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+            <figcaption>A oportunidade como central: rastreio dos documentos e linha do tempo de todos os setores, com anexos.</figcaption>
+          </figure>
+          <figure>
+            <img
               src="../img/arandue/espelho.webp"
               alt="Orçamento em formato A4 com dados da empresa e do cliente, itens, frete, total e condições, pronto para imprimir."
               width="1265"
@@ -214,7 +225,7 @@
               height="1688"
               loading="lazy"
             />
-            <figcaption>Interface responsiva no celular.</figcaption>
+            <figcaption>Interface responsiva: do celular de 320 px ao monitor, sem rolagem lateral.</figcaption>
           </figure>
         </div>
       </section>
@@ -249,11 +260,12 @@
             >
           </li>
           <li>
-            <strong>Oportunidades e rastreio</strong>
+            <strong>CRM como central</strong>
             <span
               >Funil configurável que avança sozinho com os documentos. Cada
-              orçamento e pedido mostra de onde veio, e a oportunidade ganha
-              vira cliente sem duplicar cadastro.</span
+              oportunidade reúne atendimentos, o histórico dos orçamentos, o
+              rastreio dos pedidos (entrega e recebimento) e anexos de foto,
+              vídeo, áudio e arquivo, com filtro por setor.</span
             >
           </li>
           <li>
@@ -320,9 +332,10 @@
             <strong>Assistente de IA</strong>
             <span
               >Chat no sistema e bot no Telegram que respondem com base no
-              manual e consultam faturamento, contas e estoque com as mesmas
-              permissões de quem pergunta. Consumo por empresa, com limite
-              mensal em reais.</span
+              manual, consultam faturamento, contas e estoque e leem a foto ou o
+              PDF de um documento para preparar cadastros e orçamentos. Nada é
+              gravado sem o clique em Confirmar. Ditado por voz no chat e
+              consumo por empresa, com limite mensal em reais.</span
             >
           </li>
           <li>
@@ -397,8 +410,8 @@
       <section aria-labelledby="titulo-qualidade">
         <h2 id="titulo-qualidade">Segurança e qualidade</h2>
         <ul class="numeros">
-          <li><strong>289</strong><span>testes automatizados de integração</span></li>
-          <li><strong>113</strong><span>testes ponta a ponta no navegador, 28 deles gravam o manual</span></li>
+          <li><strong>303</strong><span>testes automatizados de integração</span></li>
+          <li><strong>118</strong><span>testes ponta a ponta no navegador, mais 28 roteiros que gravam o manual</span></li>
           <li><strong>100</strong><span>em acessibilidade no Lighthouse (celular e desktop)</span></li>
           <li><strong>~137 KB</strong><span>de JavaScript inicial (gzip)</span></li>
         </ul>
@@ -410,13 +423,21 @@
           <li>No ar com usuário de banco sem poder de alterar a estrutura e RLS em todas as tabelas.</li>
           <li>Histórico protegido: CPF/CNPJ, e-mail, telefone, endereço e senha aparecem só como "alterado", sem guardar o valor.</li>
           <li>Assistente de IA sem acesso extra: cada consulta passa pela permissão da tela equivalente. O bot do Telegram vincula a conta por código de uso único e o webhook só aceita o segredo cadastrado.</li>
+          <li>Ações do assistente em duas etapas: a IA só prepara um resumo, e o clique em Confirmar grava pelo mesmo serviço da tela, uma única vez, com registro na auditoria.</li>
+          <li>Anexos em armazenamento privado: o navegador envia direto por URL assinada, e os links para ver ou baixar valem 15 minutos.</li>
         </ul>
       </section>
 
       <section aria-labelledby="titulo-proximos">
-        <h2 id="titulo-proximos">Próximas versões</h2>
+        <h2 id="titulo-proximos">Situação</h2>
+        <p>
+          Projeto concluído em 11 etapas, do cadastro ao assistente de IA, com o
+          planejamento de cada uma documentado no repositório. Ideias para uma
+          próxima fase:
+        </p>
         <ol class="roteiro">
-          <li><strong>Assistente que grava:</strong> cadastrar cliente e criar rascunho de orçamento pelo chat ou pelo Telegram, só depois do clique em Confirmar.</li>
+          <li><strong>Áudio no Telegram:</strong> transcrever mensagens de voz no servidor.</li>
+          <li><strong>Memória por empresa:</strong> o assistente guardar fatos que o cliente pedir.</li>
         </ol>
       </section>
     </main>
