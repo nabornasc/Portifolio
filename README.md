@@ -172,6 +172,8 @@ Portifolio/
 │   ├── js/operacoes.js                # Operações matemáticas
 │   ├── js/script.js                   # Estado e eventos da interface
 │   └── teste-calculadora.js           # Testes do projeto
+├── docs/                              # Relatórios de avaliação da calculadora
+├── LICENSE                            # Licença MIT do código
 └── README.md                          # Documentação
 ```
 
@@ -228,6 +230,16 @@ Mais do que uma calculadora, este projeto representa o início de uma coleção 
 experimentos e aprendizados. A ideia é continuar evoluindo, testar novas
 soluções e transformar cada funcionalidade em uma oportunidade de aprender algo
 novo. 🚀
+
+## Licença
+
+O código deste repositório (HTML, CSS, JavaScript e a calculadora) está sob a
+licença MIT. Consulte o arquivo [LICENSE](LICENSE).
+
+Ficam fora da MIT, com todos os direitos reservados: a foto pessoal, as
+capturas de tela do Arandu Gestão em `img/arandue/` e os textos do portfólio.
+Os ícones de sol e lua vêm do [SVG Repo](https://www.svgrepo.com), cada um com
+a licença indicada na página de origem.
 
 ## Autor
 
