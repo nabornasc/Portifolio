@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calculadora de ésteres: simulador educacional que desenha a evolução estimada de compostos e ésteres a partir de meia-vida, dose, intervalo e datas, com fonte e nível de evidência em cada parâmetro."
+    />
+    <title>Calculadora de ésteres · Portfólio Nabor N Silva</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="calculadora-de-ester/css/style.css" />
+    <script>
+      // Aplica o tema salvo no portfólio antes da página aparecer (evita piscar).
+      if (localStorage.getItem("tema") === "escuro") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <a class="voltar" href="../index.html"
+      ><span aria-hidden="true">←</span> Voltar ao portfólio</a
+    >
+
+    <header class="hero">
+      <p class="eyebrow">Projeto 03 · Next.js full-stack · fase de teste</p>
+      <h1>Calculadora de ésteres</h1>
+      <p class="lead">
+        Simulador educacional que desenha a curva estimada de um composto ao
+        longo do tempo a partir de meia-vida, tempo até o pico, dose, intervalo
+        e datas. Cada número do modelo vem com a fonte, o trecho citado e o
+        nível de evidência, e o que ainda não foi revisado aparece marcado na
+        própria curva.
+      </p>
+      <p class="selo">
+        <span aria-hidden="true">⚠️</span> Ferramenta educacional: não é
+        prescrição, diagnóstico nem previsão de exame
+      </p>
+
+      <div class="acoes">
+        <a class="botao primario" href="https://nabornasc.github.io/calculadora-de-ester/">
+          Abrir o simulador <span aria-hidden="true">→</span>
+        </a>
+        <a class="botao secundario" href="https://github.com/nabornasc/calculadora-de-ester">
+          Ver código no GitHub <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="demo-acesso">
+        A versão online roda no GitHub Pages, sem servidor: simula, exporta e
+        imprime, mas não salva protocolos. O sistema completo, com banco de
+        dados, sobe com <code>docker compose up</code>.
+      </p>
+    </header>
+
+    <main>
+      <section aria-labelledby="titulo-telas">
+        <h2 id="titulo-telas">Telas</h2>
+        <div class="galeria">
+          <figure class="galeria__larga">
+            <img
+              src="../img/calculadora-de-ester/simulador.webp"
+              alt="Simulador com um evento semanal: aviso de parâmetros não revisados, pico, data do pico, média no período, número de aplicações e a curva com o acúmulo entre aplicações."
+              width="1280"
+              height="1080"
+              loading="lazy"
+            />
+            <figcaption>O painel resume pico, data, média e aplicações e avisa quando a curva usa dado ainda não revisado.</figcaption>
+          </figure>
+          <figure class="galeria__larga">
+            <img
+              src="../img/calculadora-de-ester/tabelas.webp"
+              alt="Gráfico compacto fixo no topo e, abaixo, a tabela de valores diários com botões Exportar CSV, Exportar JSON e Imprimir / PDF."
+              width="1280"
+              height="1080"
+              loading="lazy"
+            />
+            <figcaption>Ao rolar, o gráfico encolhe e fica fixo; a tabela diária é o equivalente textual da curva.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/calculadora-de-ester/simulador-escuro.webp"
+              alt="O mesmo simulador no tema escuro."
+              width="1280"
+              height="1080"
+              loading="lazy"
+            />
+            <figcaption>Tema claro e escuro, com contraste conferido nos dois.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="../img/calculadora-de-ester/modelo.webp"
+              alt="Página Modelo e limites com as fórmulas do modelo de um compartimento."
+              width="1280"
+              height="1080"
+              loading="lazy"
+            />
+            <figcaption>A página do modelo mostra as fórmulas, as regras de cálculo e o que o modelo ignora.</figcaption>
+          </figure>
+          <figure class="galeria__celular">
+            <img
+              src="../img/calculadora-de-ester/mobile.webp"
+              alt="Simulador em tela de celular, com a barra fina do pico no topo e o gráfico abaixo."
+              width="780"
+              height="1688"
+              loading="lazy"
+            />
+            <figcaption>No celular, uma barra fina mostra o pico e leva de volta ao gráfico.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="titulo-problema">
+        <h2 id="titulo-problema">O problema</h2>
+        <p>
+          Calculadoras de meia-vida costumam mostrar uma curva bonita sem dizer
+          de onde veio cada número. Um valor copiado de fórum pesa o mesmo que
+          um valor de bula. Este projeto parte do contrário: o cálculo é
+          simples e documentado, e o esforço maior está em rastrear cada
+          parâmetro até a fonte e deixar claro o que ainda é provisório.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-funcionalidades">
+        <h2 id="titulo-funcionalidades">O que já funciona</h2>
+        <ul class="cartoes">
+          <li>
+            <strong>Simulador</strong>
+            <span
+              >Vários eventos com dose, unidade, frequência e número de
+              aplicações; eventos do mesmo composto somam na mesma curva ou
+              ficam separados para comparar.</span
+            >
+          </li>
+          <li>
+            <strong>Produto comercial</strong>
+            <span
+              >Preenche os eventos a partir do laboratório e do nome comercial.
+              Em produto combinado, a dose é dividida entre os ésteres na
+              proporção declarada.</span
+            >
+          </li>
+          <li>
+            <strong>Duas escalas</strong>
+            <span
+              >Nível relativo em mg eq. sempre; concentração em ng/dL só quando
+              há Cmax medido ou depuração cadastrada. Sem dado, o simulador não
+              inventa ng/dL.</span
+            >
+          </li>
+          <li>
+            <strong>Evidência visível</strong>
+            <span
+              >Cada parâmetro guarda fonte, trecho literal e nível de
+              evidência. Dado provisório, por analogia ou derivado dispara um
+              aviso na própria curva.</span
+            >
+          </li>
+          <li>
+            <strong>Biblioteca e catálogo</strong>
+            <span
+              >39 formas de compostos com parâmetros e 496 apresentações
+              comerciais sem preço, com vínculo à biblioteca e histórico de
+              alterações.</span
+            >
+          </li>
+          <li>
+            <strong>Exportação</strong>
+            <span
+              >CSV, JSON e impressão em PDF, sempre com a versão do modelo e a
+              versão dos dados.</span
+            >
+          </li>
+          <li>
+            <strong>Lista para revisão clínica</strong>
+            <span
+              >Um script gera, a partir do banco, o documento que lista cada
+              parâmetro frágil, de onde veio e o que a revisão precisa
+              responder.</span
+            >
+          </li>
+          <li>
+            <strong>Acessibilidade</strong>
+            <span
+              >Tabela equivalente ao gráfico, legenda operável por teclado,
+              rótulo em todo campo e estados que não dependem só de cor.</span
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-stack">
+        <h2 id="titulo-stack">Como foi construído</h2>
+        <ul class="tags" aria-label="Tecnologias">
+          <li>TypeScript</li>
+          <li>Next.js 15</li>
+          <li>React 19</li>
+          <li>Recharts</li>
+          <li>Tailwind CSS 4</li>
+          <li>PostgreSQL</li>
+          <li>Prisma</li>
+          <li>Zod</li>
+          <li>Vitest</li>
+          <li>Playwright</li>
+          <li>Docker</li>
+          <li>GitHub Actions</li>
+          <li>GitHub Pages</li>
+        </ul>
+        <p>
+          O motor de simulação é uma função pura, sem acesso a banco: recebe os
+          eventos e devolve as curvas. Os dados vêm de bulas oficiais
+          (DailyMed), artigos (PubMed e PMC) e PubChem, coletados por scripts
+          que guardam o trecho de origem. Para o GitHub Pages, o workflow sobe
+          um PostgreSQL só durante o build, carrega os dados e exporta o
+          simulador como HTML estático.
+        </p>
+      </section>
+
+      <section aria-labelledby="titulo-qualidade">
+        <h2 id="titulo-qualidade">Qualidade</h2>
+        <ul class="numeros">
+          <li><strong>59</strong><span>testes automatizados do motor e dos estilos das curvas</span></li>
+          <li><strong>9</strong><span>testes de interface no navegador</span></li>
+          <li><strong>19 de 20</strong><span>formas comparáveis dentro de um fator 2 da ferramenta de referência</span></li>
+          <li><strong>4,5:1</strong><span>de contraste mínimo em todo texto, nos dois temas</span></li>
+        </ul>
+        <ul class="lista">
+          <li>Meia-vida só entra com trecho literal de uma fonte; sem fonte, a forma não é simulada.</li>
+          <li>Tmax incompatível com a meia-vida é recusado, porque indica dado de outro contexto.</li>
+          <li>Dado de animal não entra, e fontes sem valor de evidência ficam registradas com o motivo da recusa.</li>
+          <li>Nenhum registro pode ser aprovado antes da revisão clínica; toda alteração manual fica no histórico.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-proximos">
+        <h2 id="titulo-proximos">Situação</h2>
+        <p>
+          Primeiro incremento concluído e em fase de teste. Os parâmetros ainda
+          não foram revisados por profissional habilitado. Próximos passos:
+        </p>
+        <ol class="roteiro">
+          <li><strong>Revisão clínica:</strong> conferir os parâmetros frágeis com médico ou farmacêutico.</li>
+          <li><strong>Contas e compartilhamento:</strong> salvar protocolos por pessoa e gerar link somente leitura.</li>
+          <li><strong>Painel de revisão:</strong> aprovar registros com histórico de versões.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <a class="voltar" href="../index.html"
+        ><span aria-hidden="true">←</span> Voltar ao portfólio</a
+      >
+    </footer>
+  </body>
+</html>

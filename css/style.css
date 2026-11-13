@@ -344,3 +344,44 @@ section.content-intro{
         padding: 1.2rem 1.35rem;
     }
 }
+
+/* ====================================================== */
+/* Variante: Calculadora de ésteres (projeto 03, verde-água) */
+
+/* Espaço entre cartões seguidos da lista de outros projetos */
+.botao-projeto + .botao-projeto{
+    margin-top: 1.25rem;
+}
+
+.botao-projeto--ester{
+    border-color: rgba(94,234,212,0.8);
+    background:
+        linear-gradient(115deg,
+            rgba(4,30,30,0.95),
+            rgba(15,90,84,0.66)),
+            url("../img/calculadora-de-ester/simulador.webp") center top/cover no-repeat;
+    box-shadow:
+        0 0 0 1px rgba(153,246,228,0.16) inset,
+        0 0 1.5rem rgba(20,184,166,0.38),
+        0 1rem 2.5rem rgba(4,30,30,0.3);
+}
+
+.botao-projeto--ester .botao-projeto__eyebrow{
+    color: #99f6e4;
+}
+
+.botao-projeto--ester .botao-projeto__texto{
+    text-shadow: 0 0 1rem rgba(45,212,191,0.85);
+}
+
+.botao-projeto--ester .botao-projeto__descricao{
+    color: #e6fffa;
+}
+
+.botao-projeto--ester:hover{
+    border-color: #99f6e4;
+    box-shadow:
+        0 0 0 1px rgba(153,246,228,0.4) inset,
+        0 0 2.5rem rgba(20,184,166,0.7),
+        0 1.25rem 3rem rgba(4,30,30,0.4);
+}

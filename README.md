@@ -14,6 +14,12 @@ apresentados nele:
   grupos de acesso. O código fica em
   [nabornasc/arandu-gestao](https://github.com/nabornasc/arandu-gestao).
 - **Minha Calculadora** — calculadora web, atualmente na versão **0.1**.
+- **Calculadora de ésteres** *(projeto 03)* — simulador educacional que desenha
+  a curva estimada de compostos e ésteres a partir de meia-vida, dose,
+  intervalo e datas, com fonte e nível de evidência em cada parâmetro. Feito em
+  Next.js, PostgreSQL e Prisma; a demo roda no
+  [GitHub Pages](https://nabornasc.github.io/calculadora-de-ester/) e o código
+  fica em [nabornasc/calculadora-de-ester](https://github.com/nabornasc/calculadora-de-ester).
 
 O objetivo é construir uma experiência simples, visual e funcional para
 apresentar meus estudos em desenvolvimento web, registrando não apenas o
@@ -21,7 +27,7 @@ resultado final, mas também o processo por trás de cada etapa.
 
 ## Visão geral
 
-O projeto possui três experiências principais:
+O projeto possui quatro experiências principais:
 
 1. **Página inicial do portfólio** — uma apresentação pessoal com slideshow,
    alternância entre tema claro e escuro, o projeto em destaque e, logo abaixo,
@@ -32,10 +38,15 @@ O projeto possui três experiências principais:
    leva ao código e à [demo ao vivo](https://arandu-gestao.vercel.app).
 3. **Minha Calculadora** — uma calculadora web com operações básicas, funções
    extras e interface neumórfica responsiva.
+4. **Página-vitrine da Calculadora de ésteres** — apresenta o simulador, as
+   telas, a stack e a situação do projeto. O sistema completo usa banco de
+   dados, mas o simulador também foi exportado como site estático: o botão
+   **Abrir o simulador** leva à versão que roda no GitHub Pages.
 
 Na página inicial, cada projeto tem um cartão interativo com a imagem do próprio
 projeto como fundo, efeito de vidro e neon. O Arandu Gestão usa o cartão grande, em
-roxo; a calculadora usa a versão compacta, em ciano, logo abaixo.
+roxo; a calculadora usa a versão compacta, em ciano, logo abaixo, e a
+Calculadora de ésteres usa a mesma versão compacta em verde-água, com descrição.
 
 ## Resultado atual
 
@@ -164,9 +175,12 @@ Portifolio/
 ├── img/                               # Imagens, ícones e recursos visuais
 ├── projetos/
 │   ├── arandue.html                   # Página-vitrine do Arandu Gestão
-│   └── calculadora.html               # Página da calculadora
+│   ├── calculadora.html               # Página da calculadora
+│   └── calculadora-de-ester.html      # Página-vitrine da Calculadora de ésteres
 ├── projetos/arandue/css/style.css     # Estilos da vitrine (tema claro/escuro)
 ├── img/arandue/                       # Capturas de tela do Arandu Gestão
+├── projetos/calculadora-de-ester/css/style.css  # Estilos da vitrine (verde-água)
+├── img/calculadora-de-ester/          # Capturas de tela da Calculadora de ésteres
 ├── projetos/calculadora/
 │   ├── css/style.css                  # Estilos da calculadora
 │   ├── js/operacoes.js                # Operações matemáticas
@@ -237,7 +251,8 @@ O código deste repositório (HTML, CSS, JavaScript e a calculadora) está sob a
 licença MIT. Consulte o arquivo [LICENSE](LICENSE).
 
 Ficam fora da MIT, com todos os direitos reservados: a foto pessoal, as
-capturas de tela do Arandu Gestão em `img/arandue/` e os textos do portfólio.
+capturas de tela do Arandu Gestão em `img/arandue/`, as capturas da
+Calculadora de ésteres em `img/calculadora-de-ester/` e os textos do portfólio.
 Os ícones de sol e lua vêm do [SVG Repo](https://www.svgrepo.com), cada um com
 a licença indicada na página de origem.
 
